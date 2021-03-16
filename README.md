@@ -1,4 +1,4 @@
-GIỚI THIỆU SẢN PHẨM
+ GIỚI THIỆU SẢN PHẨM
 
 Tên: BESAFE
 
@@ -31,3 +31,5 @@ cung cấp thông tin cá nhân, địa chỉ nhận hàng (tên, sđt, địa c
 đánh giá sản phẩm
 
 thanh toán online
+![image](https://user-images.githubusercontent.com/73162132/111297380-23d48c00-8680-11eb-88f6-cfa942c2a554.png)
+
