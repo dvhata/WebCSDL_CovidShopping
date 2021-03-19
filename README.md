@@ -38,7 +38,6 @@ cung cấp thông tin cá nhân, địa chỉ nhận hàng (tên, sđt, địa c
 
 thanh toán online
 
-
-![image](https://user-images.githubusercontent.com/71579658/111723808-b77fa580-8896-11eb-8d7d-cc7326f9be3f.png)
+![image](https://user-images.githubusercontent.com/71579658/111724127-47bdea80-8897-11eb-8241-2fe92d459897.png)
 
 
