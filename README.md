@@ -1,12 +1,15 @@
  GIỚI THIỆU SẢN PHẨM
 
-Tên: BESAFE
 
-Mô tả: Là nơi mua sắm, trang bị những đồ dùng cần thiết để bảo vệ sức khỏe của bản thân và gia đình, nhất là trong tình trạng dịch covid hoành hành
+*Tên: BESAFE
 
-Chức năng:
 
-Người quản lí:
+*Mô tả: Là nơi mua sắm, trang bị những đồ dùng cần thiết để bảo vệ sức khỏe của bản thân và gia đình, nhất là trong tình trạng dịch covid hoành hành
+
+
+*Chức năng:
+
++ Người quản lí:
 
 Cập nhật tình trạng sản phẩm (cập nhật số lượng,giá, thông tin sản phẩm,..)
 
@@ -18,7 +21,8 @@ Xử lý yêu cầu của khách hàng
 
 Tư vấn bán hàng, giải đáp thắc mắc
 
-Khách hàng:
+
++ Khách hàng:
 
 Xem được các thông tin về sản phẩm
 
