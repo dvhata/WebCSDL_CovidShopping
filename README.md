@@ -7,6 +7,7 @@ Mô tả: Là nơi mua sắm, trang bị những đồ dùng cần thiết để
 Chức năng:
 
 Người quản lí:
+
 Cập nhật tình trạng sản phẩm (cập nhật số lượng,giá, thông tin sản phẩm,..)
 
 Cập nhập những sản phẩm mới
@@ -17,7 +18,8 @@ Xử lý yêu cầu của khách hàng
 
 Tư vấn bán hàng, giải đáp thắc mắc
 
-khách hàng:
+Khách hàng:
+
 Xem được các thông tin về sản phẩm
 
 Xem được đơn vị cung cấp sản phẩm
