@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.header-color {
+    background-color: #fafbff;
+}
+
+.logo-header {
+    width: 100px;
+    height: 80px;
+    background-color: rgba(250, 251, 255, 255);
+    background-color: transparent;
+}
+
+.button-header {
+    margin-left: 0%;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(144, 219, 222, 255);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.slide {
+    width: 100%;
+    height: 650px;
+    /*     overflow: hidden; */
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.top-san-pham-ban-chay {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    color: rgba(7, 17, 53, 255);
+}
+
+.sap-xep-theo-so-luong-mua-cua-khach-hang {
+    color: rgb(188, 188, 205);
+    text-align: center;
+    font-size: 30px;
+}
+
+.card-top {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #bcbccdb4;
+    height: 160px;
+    font-size: larger;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.753);
+}
+
+.list-product-button {
+    margin-left: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.gio-hang-icon {
+    margin-left: 300px;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.banner-sale {
+    width: 100%;
+    height: 1000px;
+    background-image: url("../img/pngtree-minimalist-banner-background-for-black-friday-event-image_451065.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-sale h1 {
+    display: block;
+    font-weight: bold;
+    font-size: 80px;
+    background-color: #6b99a95d;
+    text-align: center;
+    text-decoration: rgba(144, 219, 222, 255);
+    margin: 20px;
+}
+
+.ceo-cam-ket {
+    background-color: #93dbdcd3;
+    width: 1483px;
+    height: 357px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ceo-cam-ket h1 {
+    margin-left: 190px;
+    margin-top: 20px;
+    font-family: "Whyte Inktrap", Whyte, sans-serif;
+    font-size: 36px;
+    font-variant: normal;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 70.2px;
+    text-decoration: none solid rgb(0, 0, 0);
+    text-align: start;
+    text-indent: -16px;
+    text-transform: none;
+    vertical-align: baseline;
+    white-space: normal;
+    word-spacing: 2px;
+    background-attachment: scroll;
+}
+
+.ceo-cam-ket img {
+    margin: 250px;
+    width: 405px;
+    height: 239px;
+    border-radius: 29px;
+    border: 5px black;
+}
+
+.news {
+    text-align: center;
+}
+
+.news p {
+    font-size: 30px;
+
+}
+
+.news img {
+    width: 100%;
+    height: 50%;
+}
+
+.text-news {
+    display: block;
+    background-color: white;
+}
+
+.div-ket-thuc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ket-thuc {
+    background-color: #66809c;
+    width: 100%;
+    height: 50px;
+}
+
+.about-us {
+    display: block;
+    text-align: center;
+    background-color: #fafbff;
+    margin-bottom: 0;
+    color: black;
+    border-color: #5e839c 1px;
+}
+
+.about-us img {
+    margin: 20px;
+    width: 120px;
+    height: 100px;
+    text-align: center;
+}
+
