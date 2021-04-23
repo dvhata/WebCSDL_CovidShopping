@@ -37,7 +37,7 @@ cung cấp thông tin cá nhân, địa chỉ nhận hàng (tên, sđt, địa c
 đánh giá sản phẩm
 
 thanh toán online
-![image](https://user-images.githubusercontent.com/71579658/115804418-29568c00-a40d-11eb-9e79-2e2b634d4055.png)
+![image](https://user-images.githubusercontent.com/71579658/115804491-49864b00-a40d-11eb-8a77-eda71faf3a15.png)
 
 
 
