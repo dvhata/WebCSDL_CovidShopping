@@ -156,7 +156,7 @@
                     <form action="{% url 'sanphamcuthe' sanpham.id %}" method="POST" >
                       {% csrf_token %}
                     <input hidden type="text" name='product' value='{{sanpham.id}}'>
-                    <button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}} style="margin-left: 65%;">
+                    <button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}}" style="margin-left: 65%;">
                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                         <input class="float-right btn btn-light border btn-sm" type="submit"  value ='Thêm vào giỏ'>
                     </button>
