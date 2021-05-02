@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css\trangChu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sanPhamCuThe.css' %}">
+    <link rel="stylesheet" href="{% static 'css\filterPrice.css' %}">
+    <link rel="stylesheet" href="{% static 'css\user.css' %}">
+    <link rel="stylesheet" href="{% static 'css\card.css' %}">
+    <link rel="stylesheet" href="{% static 'css\sanPham.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <title>Trang chủ</title>
+    <title>Trang chủ / Sản phẩm</title>
+</head>
+
+<body style="font-family: 'Hind Siliguri', sans-serif;color: #071434;" data-spy="scroll" data-target=".navbar"
+    data-offset="50">
+    <!-- HEADER -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light header-color fixed-top" style="width: 100%;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container-fluid content-navbar">
+                <div class="col-sm-4">
+                    <a class="navbar-brand" href="trangChu.html">
+                        <img class="logo-header" src="{% static 'img\logo.jpg' %}" alt="error">
+                    </a>
+                </div>
+                <div class="col-sm-6" style="border-right: 2px solid black; padding-left: 70px;">
+                    <div class="button-header">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active button-header-hover-li">
+                                    <a class="nav-link" href="{% url 'trangchu' %}">
+                                        <i class="fas fa-home" aria-hidden="true"></i>
+                                        <span class="sr-only">(current)</span>
+                                        Trang chủ
+                                    </a>
+                                </li>
+                                <li class="nav-item active button-header-hover-li">
+                                    <a class="nav-link" href="#Ở đây chúng tôi có ....">
+                                        <i class="fas fa-list" aria-hidden="true"></i>
+                                        Danh mục
+                                    </a>
+                                </li>
+
+                                <li class="nav-item active button-header-hover-li">
+                                    <a class="nav-link" href="#Best seller">
+                                        <i class="fab fa-hotjar"></i>
+                                        Best seller
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown active button-header-hover-li">
+                                    <a class="nav-link" href="{% url 'sanpham' %}" id="navbarDropdown">
+                                        <i class="fab fa-product-hunt"></i>
+                                        Sản phẩm
+                                    </a>
+                                    <div class="dropdown-content">
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Khẩu
+                                            trang</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Xà phòng
+                                            - Nước rửa tay</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Máy lọc
+                                            không khí</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Đồ bảo
+                                            hộ</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Nước rửa
+                                            tay</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Nước xúc
+                                            miệng</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Thực phẩm
+                                            chức năng</a>
+                                        <a class="dropdown-item" style="border: 2px solid black;" href="#">Dung dịch
+                                            khử khuẩn</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item active button-header-hover-li">
+                                    <a class="nav-link" href="#Tin tức">
+                                        <i class="fas fa-newspaper    "></i>
+                                        Tin tức
+                                    </a>
+                                </li>
+                                <li class="nav-item active button-header-hover-li">
+                                    <a class="nav-link" href="#Liên hệ">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        Liên hệ
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2 icon-navbar">
+                    <li class="nav-item dropdown active button-header-hover-li">
+                        <a class="nav-link" href="{% url 'sanpham' %}" id="navbarDropdown">
+                            <i style="color: black;" class="fas fa-shopping-cart"></i>
+                        </a>
+                        <div class="dropdown-content" style="background-color:white">
+                            <h4 style="margin: 5px;border-bottom: 2px solid black;">
+                                <i class="fas fa-money-check-alt">
+                                    : 80000đ
+                                    <span class="badge"
+                                        style="background-color: #91dbde;border-radius: 7px; width: 10px; height: 20px;font-size: 20px;">
+                                        <p style="font-size: 15px">
+                                            2
+                                        </p>
+                                    </span>
+                                </i>
+
+                            </h4>
+                            <a class="dropdown-item" href="#">
+                                <div>
+                                    <img style="width: 100px;height: 100px"
+                                        src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
+                                    <h6 style="font-weight: bold;">Khẩu trang vải</h6>
+                                    <p>
+                                        Số lượng: 1
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div>
+                                    <img style="width: 100px;height: 100px"
+                                        src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
+                                    <h6 style="font-weight: bold;">Khẩu trang vải</h6>
+                                    <p>
+                                        Số lượng: 1
+                                    </p>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-dark"
+                                style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
+                                Đặt hàng</button>
+                        </div>
+
+                    </li>
+                    <a href="">
+                        <i style="color: black;" class="fas fa-search" style="margin-left: 15px;">
+
+                        </i>
+                    </a>
+
+                    <div class="dropdown" style="margin-left:-8px">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                            <i class="fas fa-user-ninja" style="margin-left: 20px;"></i>
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation" style="margin: 10px">
+                                <a role="menuitem" tabindex="-1" href="user.html">
+                                    <p style="color:black">
+                                        <i class="fas fa-user-shield"></i>
+                                        Thông tin
+                                    </p>
+                                </a>
+                            </li>
+                            <li role="presentation" style="margin: 10px">
+                                <a role="menuitem" tabindex="-1" href="{% url 'giohang' %}">
+                                    <p style="color:black">
+                                        <i class="fas fa-clipboard-list"></i>
+                                        Đơn hàng
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </nav>
+    </div>
+
+    <!-- Content -->
+    <div style="margin-top: 150px; ">
+        <h1 style="color: #071434;font-weight: bold;font-size: 50px;">
+            Đơn hàng của bạn
+        </h1>
+        <h1>
+            <i class="fas fa-wallet"></i>
+        </h1>
+        <div style="overflow-x:auto;margin:80px;background-color: white;margin-top: 50px;">
+            <table>
+                <tr style="background-color: rgba(255, 255, 0, 0.705);font-weight: bold;">
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phảm</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
+                    <th>Ngày đặt</th>
+                    <th>Ngày giao</th>
+                    <th>Hình thức thanh toán</th>
+                    <th>Tình trạng</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <p>Tên 1</p>
+                        <p>Tên 3</p>
+                        <p>Tên 2</p>
+                    </td>
+                    <td>
+                        <p>Số lượng 1</p>
+                        <p>Số lượng 2</p>
+                        <p>Số lượng 3</p>
+                    </td>
+                    <td>350000</td>
+                    <td>15/5/2020</td>
+                    <td> 17/5/2020</td>
+                    <td>Tiền mặt</td>
+                    <td>Đã tiếp nhận</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <p>Tên 1</p>
+                        <p>Tên 3</p>
+                        <p>Tên 2</p>
+                    </td>
+                    <td>
+                        <p>Số lượng 1</p>
+                        <p>Số lượng 2</p>
+                        <p>Số lượng 3</p>
+                    </td>
+                    <td>350000</td>
+                    <td>15/5/2020</td>
+                    <td> 17/5/2020</td>
+                    <td>Tiền mặt</td>
+                    <td>Đã tiếp nhận</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Liên hệ -->
+        <div id="Liên hệ">
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h6>VỀ CHÚNG TÔI</h6>
+                            <p class="text-justify">besafe.com - <i>SHOPPING AN TOÀN MÙA DỊCH </i> là một website mua
+                                sắm
+                                nổi
+                                tiếng lâu đời và có truyền thống bán các sản phẩm y tế. Mùa dịch COVID-19, nhu cầu mua
+                                sắm
+                                vật
+                                tư y tế ngày càng cao, hãy mua chúng tôi, vì chúng tôi luôn đáp ứng những nhu cầu tốt
+                                nhất
+                                của
+                                bạn. Luôn có những đợt giảm giá siêu khuyến mãi hấp dẫn oke la chưa</p>
+                            <p>
+                                Điện thoại: 0123456789
+                            </p>
+                            <p>Email: besafe.com</p>
+                            <p>Địa chỉ: 144 Xuân Thủy Cầu Giấy</p>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Danh mục</h6>
+                            <ul class="footer-links">
+                                <li><a href="http://scanfcode.com/category/c-language/">Khẩu trang</a></li>
+                                <li><a href="http://scanfcode.com/category/front-end-development/">Nước rửa tay</a></li>
+                                <li><a href="http://scanfcode.com/category/back-end-development/">Nhiệt kế</a></li>
+                                <li><a href="http://scanfcode.com/category/java-programming-language/">Máy lọc không
+                                        khí</a>
+                                </li>
+                                <li><a href="http://scanfcode.com/category/c-language/">Nhiệt kế</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>PHÍM TẮT</h6>
+                            <ul class="footer-links">
+                                <li><a href="{% url 'trangchu' %}">Trang chủ</a></li>
+                                <li><a href="trangChu.html">Danh mục</a></li>
+                                <li><a href="trangChu.html">Best seller</a></li>
+                                <li><a href="trangChu.html">Sản phẩm</a></li>
+                                <li><a href="trangChu.html">Tin tức</a></li>
+                                <li><a href="trangChu.html">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <p class="copyright-text">Copyright &copy; 2018 All Rights Reserved by
+                                <a href="trangChu.html">Thao Hoa Company</a>.
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+        <script src="{% static 'js\filterPrice.js' %} "></script>
+        <script src="{% static 'js\customSelect.js' %} "></script>
+</body>
+
+</html>

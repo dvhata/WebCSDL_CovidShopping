@@ -1,0 +1,386 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css\trangChu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gioHang.css' %}">
+    <title>Giỏ hàng</title>
+    <style>
+        body {
+            width: 100%;
+            position: relative;
+        }
+    </style>
+
+
+</head>
+
+<body style="font-family: 'Hind Siliguri', sans-serif; color: #071434;" data-spy="scroll" data-target=".navbar"
+    data-offset="50">
+
+    <div class="content">
+        <!-- HEADER -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light header-color fixed-top" style="width: 100%;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container-fluid content-navbar">
+                    <div class="col-sm-4">
+                        <a class="navbar-brand" href="{% url 'sanpham' %}">
+                            <img class="logo-header" src="{% static 'img\logo.jpg' %}" alt="error">
+                        </a>
+                    </div>
+                    <div class="col-sm-6" style="border-right: 2px solid black; padding-left: 70px;">
+                        <div class="button-header">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active button-header-hover-li">
+                                        <a class="nav-link" href="{% url 'sanpham' %}">
+                                            <i class="fas fa-home" aria-hidden="true"></i>
+                                            <span class="sr-only">(current)</span>
+                                            Trang chủ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item active button-header-hover-li">
+                                        <a class="nav-link" href="#Ở đây chúng tôi có ....">
+                                            <i class="fas fa-list" aria-hidden="true"></i>
+                                            Danh mục
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item active button-header-hover-li">
+                                        <a class="nav-link" href="#Best seller">
+                                            <i class="fab fa-hotjar"></i>
+                                            Best seller
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item dropdown active button-header-hover-li">
+                                        <a class="nav-link" href="{% url 'sanpham' %}" id="navbarDropdown">
+                                            <i class="fab fa-product-hunt"></i>
+                                            Sản phẩm
+                                        </a>
+                                        <div class="dropdown-content">
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Khẩu
+                                                trang</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Xà phòng
+                                                - Nước rửa tay</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Máy lọc
+                                                không khí</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Đồ bảo
+                                                hộ</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Nhiệt
+                                                kế</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Nước xúc
+                                                miệng</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Thực phẩm
+                                                chức năng</a>
+                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Dung dịch
+                                                khử khuẩn</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item active button-header-hover-li">
+                                        <a class="nav-link" href="#Tin tức">
+                                            <i class="fas fa-newspaper    "></i>
+                                            Tin tức
+                                        </a>
+                                    </li>
+                                    <li class="nav-item active button-header-hover-li">
+                                        <a class="nav-link" href="#Liên hệ">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            Liên hệ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 icon-navbar">
+                        <li class="nav-item dropdown active button-header-hover-li">
+                            <a class="nav-link" href="{% url 'giohang' %}" id="navbarDropdown">
+                                <i style="color: black;" class="fas fa-shopping-cart"></i>
+                            </a>
+                            <div class="dropdown-content" style="background-color:white">
+                                <h4 style="margin: 5px;border-bottom: 2px solid black;">
+                                    <i class="fas fa-money-check-alt">
+                                        : 80000đ
+                                        <span class="badge"
+                                            style="background-color: #91dbde;border-radius: 7px; width: 10px; height: 20px;font-size: 20px;">
+                                            <p style="font-size: 15px">
+                                                2
+                                            </p>
+                                        </span>
+                                    </i>
+
+                                </h4>
+                                 
+                               {% comment %}  <a class="dropdown-item" href="#">
+                                    <div>
+                                        <img style="width: 100px;height: 100px"
+                                            src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
+                                        <h6 style="font-weight: bold;">Khẩu trang vải</h6>
+                                        <p>
+                                            Số lượng: 1
+                                        </p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <div>
+                                        <img style="width: 100px;height: 100px"
+                                            src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
+                                        <h6 style="font-weight: bold;">Khẩu trang vải</h6>
+                                        <p>
+                                            Số lượng: 1
+                                        </p>
+                                    </div>
+                                </a>
+                                <button type="button" class="btn btn-dark"
+                                    style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
+                                    Đặt hàng</button>
+                            </div>
+ {% endcomment %}
+                        </li>
+                        <a href="">
+                            <i style="color: black;" class="fas fa-search">
+                            </i>
+                        </a>
+
+                        <div class="dropdown" style="margin-left:-8px">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="menu1"
+                                data-toggle="dropdown">
+                                <i class="fas fa-user-ninja" style="margin-left: 20px;"></i>
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li role="presentation" style="margin: 10px">
+                                    <a role="menuitem" tabindex="-1" href="user.html">
+                                        <p style="color:black">
+                                            <i class="fas fa-user-shield"></i>
+                                            Thông tin
+                                        </p>
+                                    </a>
+                                </li>
+                                <li role="presentation" style="margin: 10px">
+                                    <a role="menuitem" tabindex="-1" href="card.html">
+                                        <p style="color:black">
+                                            <i class="fas fa-clipboard-list"></i>
+                                            Đơn hàng
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </nav>
+        </div>
+
+        <!-- GIỎ HÀNG -->
+
+        <div class="container pb-5" style="margin-top:150px">
+            <h1 style="color: #071434;font-weight: bold;font-size: 50px;">
+                Giỏ hàng của bạn
+                <i class="fas fa-cart-arrow-down"></i>
+            </h1>
+            <div class="row">
+                <div class="col-xl-9 col-md-8">
+                    <h2 class="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">
+                        <span>Danh sách</span><a class="font-size-sm" href="{% url 'Trangchu' %}"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-chevron-left" style="width: 1rem; height: 1rem;">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>Tiếp tục mua sắm</a></h2>
+                            
+                   
+                <!-- Sidebar-->
+                <div class="col-xl-3 col-md-4 pt-3 pt-md-0">
+                    <h2 class="h6 px-4 py-3 bg-secondary text-center">Tổng tiền</h2>
+                    <div class="h3 font-weight-semibold text-center py-3">325.000 đ</div>
+                    <hr>
+                    <h3 class="h6 pt-4 font-weight-semibold"><span
+                            class="badge badge-success mr-2">Note</span>Ghi chú cho shop</h3>
+                    <textarea class="form-control mb-3" id="order-comments" rows="5"></textarea>
+                    <a class="btn btn-primary btn-block" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-credit-card mr-2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>Xác nhận</a>
+                    <div class="pt-4">
+                        <div class="accordion" id="cart-accordion">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="accordion-heading font-weight-semibold"><a href="#promocode"
+                                            role="button" data-toggle="collapse" aria-expanded="true"
+                                            aria-controls="promocode">Nhập mã giảm giá<span
+                                                class="accordion-indicator"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" class="feather feather-chevron-up">
+                                                    <polyline points="18 15 12 9 6 15"></polyline>
+                                                </svg></span></a></h3>
+                                </div>
+                                <div class="collapse show" id="promocode" data-parent="#cart-accordion">
+                                    <div class="card-body">
+                                        <form class="needs-validation" novalidate="">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" id="cart-promocode"
+                                                    placeholder="Promo code" required="">
+                                                <div class="invalid-feedback">Please provide a valid promo code!</div>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-block" type="submit">Check mã</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="accordion-heading font-weight-semibold"><a class="collapsed"
+                                            href="#shipping" role="button" data-toggle="collapse" aria-expanded="true"
+                                            aria-controls="shipping">Địa chỉ giao hàng<span
+                                                class="accordion-indicator"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" class="feather feather-chevron-up">
+                                                    <polyline points="18 15 12 9 6 15"></polyline>
+                                                </svg></span></a></h3>
+                                </div>
+                                <div class="collapse" id="shipping" data-parent="#cart-accordion">
+                                    <div class="card-body">
+                                        <form class="needs-validation" novalidate="">
+                                            <div class="form-group">
+                                                <select class="form-control custom-select" required="">
+                                                    <option value="">Tỉnh / thành phố</option>
+                                                    <option value="Australia">Hà Nội</option>
+                                                    <option value="Belgium">Hồ Chí Minh</option>
+                                                    <option value="Canada">Bắc Giang</option>
+                                                    <option value="Finland">Hòa Bình</option>
+                                                    <option value="Mexico">Bắc Kạn</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please choose your country!</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-control custom-select" required="">
+                                                    <option value="">Choose your city</option>
+                                                    <option value="Bern">Bern</option>
+                                                    <option value="Brussels">Brussels</option>
+                                                    <option value="Canberra">Canberra</option>
+                                                    <option value="Helsinki">Helsinki</option>
+                                                    <option value="Mexico City">Mexico City</option>
+                                                    <option value="Ottawa">Ottawa</option>
+                                                    <option value="Washington D.C.">Washington D.C.</option>
+                                                    <option value="Wellington">Wellington</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please choose your city!</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" placeholder="ZIP / Postal code"
+                                                    required="">
+                                                <div class="invalid-feedback">Please provide a valid zip!</div>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-block" type="submit">Calculate
+                                                shipping</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liên hệ -->
+        <div id="Liên hệ">
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h6>VỀ CHÚNG TÔI</h6>
+                            <p class="text-justify">besafe.com - <i>SHOPPING AN TOÀN MÙA DỊCH </i> là một website mua
+                                sắm
+                                nổi
+                                tiếng lâu đời và có truyền thống bán các sản phẩm y tế. Mùa dịch COVID-19, nhu cầu mua
+                                sắm
+                                vật
+                                tư y tế ngày càng cao, hãy mua chúng tôi, vì chúng tôi luôn đáp ứng những nhu cầu tốt
+                                nhất
+                                của
+                                bạn. Luôn có những đợt giảm giá siêu khuyến mãi hấp dẫn oke la chưa</p>
+                            <p>
+                                Điện thoại: 0123456789
+                            </p>
+                            <p>Email: besafe.com</p>
+                            <p>Địa chỉ: 144 Xuân Thủy Cầu Giấy</p>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Danh mục</h6>
+                            <ul class="footer-links">
+                                <li><a href="http://scanfcode.com/category/c-language/">Khẩu trang</a></li>
+                                <li><a href="http://scanfcode.com/category/front-end-development/">Nước rửa tay</a></li>
+                                <li><a href="http://scanfcode.com/category/back-end-development/">Nhiệt kế</a></li>
+                                <li><a href="http://scanfcode.com/category/java-programming-language/">Máy lọc không
+                                        khí</a>
+                                </li>
+                                <li><a href="http://scanfcode.com/category/c-language/">Nhiệt kế</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h6>PHÍM TẮT</h6>
+                            <ul class="footer-links">
+                                <li><a href="{% url 'Trangchu' %}">Trang chủ</a></li>
+                                <li><a href="{% url 'Trangchu' %}">Danh mục</a></li>
+                                <li><a href="{% url 'Trangchu' %}">Best seller</a></li>
+                                <li><a href="{% url 'Trangchu' %}">Sản phẩm</a></li>
+                                <li><a href="{% url 'Trangchu' %}">Tin tức</a></li>
+                                <li><a href="{% url 'Trangchu' %}">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <p class="copyright-text">Copyright &copy; 2018 All Rights Reserved by
+                                <a href="{% url 'Trangchu' %}">Thao Hoa Company</a>.
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                                <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'js\modal.js' %} "></script>
+    <script src="{% static 'js\login.js' %} "></script>
+</body>
+
+</html>

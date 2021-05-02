@@ -1,0 +1,67 @@
+        <!-- Danh mục sản phẩm -->
+
+        <div class="container">
+            <div class="o-day-chung-toi-co">
+                <h1 id="Ở đây chúng tôi có ...." class="top-san-pham-ban-chay" style="background-color: black">
+                    Ở đây chúng tôi có ....
+                </h1>
+                <div class="list-product-button" style="background-color: red">
+                    <button type="button active" class="btn button-o-day-chung-toi-co">Tất cả</button>
+                    <button type="button" class="btn button-o-day-chung-toi-co">Khẩu trang</button>
+                    <button type="button" class="btn button-o-day-chung-toi-co">Xà phòng / Nước rửa tay</button>
+                    <button type="button" class="btn button-o-day-chung-toi-co ">Nước xúc miệng</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 product-chung" style="margin-top: 10px;width: 270px;height:350px">
+                    <span class="badge product-hot"
+                        style="background-color: rgba(73, 167, 201, 0.973); width: 50px; height: 25px;">
+                        <p style="font-size: 15px; margin-top: 2px; color:white">
+                            HOT
+                        </p>
+                    </span>
+                    <div class="product-gio-hang">
+                        <a href="">
+                            <i style="color: black" class="fas fa-angle-double-right"></i>
+                        </a>
+                        <i style="border: 2px black;" id="gio-hang" class="fas fa-cart-plus">
+                            Thêm vào giỏ
+                        </i>
+                    </div>
+                    <div>
+                        <img class="card-img-top" src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="Card image"
+                            style="width:100%;height: 100%;border: 1px dotted rgba(0, 0, 0, 0.185)">
+                    </div>
+
+                    <div class="product-tieu-de">
+                        <h5 class="card-title" style="font-weight: bold;">Khẩu trang kháng khuẩn
+                            loại 1</h5>
+                        <p style="margin-top : 4px">
+                            90.000 VNĐ / hộp
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="o-day-chung-toi-co">
+            <div class="list-product-button">
+                <button type="button active" class="btn button-o-day-chung-toi-co">Tất cả</button>
+                <button type="button" class="btn button-o-day-chung-toi-co">Khẩu trang</button>
+                <button type="button" class="btn btn button-o-day-chung-toi-co">Xà phòng / Nước rửa tay</button>
+                <button type="button" class="btn btn button-o-day-chung-toi-co ">Nước xúc miệng</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        result = document.getElementById("gio-hang");
+        result.onclick = function () {
+            alert('Bạn đã thêm thành công một sản phẩm vào giỏ hàng')
+            return false
+        }
+        console.log(result)
+    </script>
+
+        
