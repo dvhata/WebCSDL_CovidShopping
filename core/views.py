@@ -16,6 +16,7 @@ from order.models import Don_dat_hang
 from cart.models import gio_hang
 from user.models import Khach_hang
 from django.contrib.auth.models import User
+from user_auth.forms import RegisterForm
 # Create your views here.
 
 
@@ -52,6 +53,32 @@ class SanphamView(View):
 
 class SiteLoginView(LoginView):
     template_name = "login.html"
+def register(request):
+    context = {
+        'form' : RegisterForm(),
+        'error' : None
+    }
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        try:
+            User.objects.create_user(username=username, password=password)
+            return redirect('/login')
+        except Exception as e:
+            context['error'] = e
+            return render(request, 'login.html',context)
+        return render(request, 'login.html',context)
+  
+    registerForm = RegisterForm() 
+    return render(request, 'register.html', {'form':registerForm})
+
+@login_required(login_url="/users/login")
+def cart_add(request, id):
+    cart = gio_hang(request)
+    product = San_pham.objects.get(id=id)
+    kh = Khach_hang.object.get(user = request.user)
+    cart.add(khach_hang = kh , san_pham = product , so_luong=1)
+    return redirect("sanpham")
 
 @login_required
 def giohangview(request):
