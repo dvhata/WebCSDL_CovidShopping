@@ -8,7 +8,6 @@
 
 
 
-thanh toán online
-![image](https://user-images.githubusercontent.com/71579658/116001452-b6246400-a61e-11eb-9d84-4e0b70bc8c3f.png)
+![image](https://user-images.githubusercontent.com/71579658/116973352-965c0280-ace6-11eb-9c8c-ba6552925ccb.png)
 
 
