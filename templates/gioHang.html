@@ -126,8 +126,8 @@
                                     </i>
 
                                 </h4>
-                                 
-                               {% comment %}  <a class="dropdown-item" href="#">
+
+                                {% comment %} <a class="dropdown-item" href="#">
                                     <div>
                                         <img style="width: 100px;height: 100px"
                                             src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
@@ -151,7 +151,7 @@
                                     style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
                                     Đặt hàng</button>
                             </div>
- {% endcomment %}
+                            {% endcomment %}
                         </li>
                         <a href="">
                             <i style="color: black;" class="fas fa-search">
@@ -165,7 +165,7 @@
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                                 <li role="presentation" style="margin: 10px">
-                                    <a role="menuitem" tabindex="-1" href="user.html">
+                                    <a role="menuitem" tabindex="-1" href="{% url 'user' %}">
                                         <p style="color:black">
                                             <i class="fas fa-user-shield"></i>
                                             Thông tin
@@ -194,110 +194,63 @@
                 <i class="fas fa-cart-arrow-down"></i>
             </h1>
             <div class="row">
-                <div class="col-xl-9 col-md-8">
+                <div class="col-xl-12 col-md-12">
                     <h2 class="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">
-                        <span>Danh sách</span><a class="font-size-sm" href="{% url 'Trangchu' %}"><svg xmlns="http://www.w3.org/2000/svg"
-                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="feather feather-chevron-left" style="width: 1rem; height: 1rem;">
+                        <span>Danh sách</span><a class="font-size-sm" href="{% url 'Trangchu' %}"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-left"
+                                style="width: 1rem; height: 1rem;">
                                 <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>Tiếp tục mua sắm</a></h2>
-                            
-                   
-                <!-- Sidebar-->
-                <div class="col-xl-3 col-md-4 pt-3 pt-md-0">
-                    <h2 class="h6 px-4 py-3 bg-secondary text-center">Tổng tiền</h2>
-                    <div class="h3 font-weight-semibold text-center py-3">325.000 đ</div>
-                    <hr>
-                    <h3 class="h6 pt-4 font-weight-semibold"><span
-                            class="badge badge-success mr-2">Note</span>Ghi chú cho shop</h3>
-                    <textarea class="form-control mb-3" id="order-comments" rows="5"></textarea>
-                    <a class="btn btn-primary btn-block" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-credit-card mr-2">
-                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                            <line x1="1" y1="10" x2="23" y2="10"></line>
-                        </svg>Xác nhận</a>
-                    <div class="pt-4">
-                        <div class="accordion" id="cart-accordion">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="accordion-heading font-weight-semibold"><a href="#promocode"
-                                            role="button" data-toggle="collapse" aria-expanded="true"
-                                            aria-controls="promocode">Nhập mã giảm giá<span
-                                                class="accordion-indicator"><svg xmlns="http://www.w3.org/2000/svg"
-                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" class="feather feather-chevron-up">
-                                                    <polyline points="18 15 12 9 6 15"></polyline>
-                                                </svg></span></a></h3>
+                            </svg>Tiếp tục mua sắm</a>
+                    </h2>
+
+                    
+                        <div class="cart-items" style="margin-top:20px">
+                            {% for value in items %}
+                            <div class="cart-row" style="display:flex;flex-wrap: nowrap;margin-top:30px">
+                                <div class="cart-item cart-column" style="margin-right:20px;">
+                                    <img class="cart-item-image" src="{{value.san_pham.anhsp.url}}" width="100"
+                                        height="100">
+
                                 </div>
-                                <div class="collapse show" id="promocode" data-parent="#cart-accordion">
-                                    <div class="card-body">
-                                        <form class="needs-validation" novalidate="">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" id="cart-promocode"
-                                                    placeholder="Promo code" required="">
-                                                <div class="invalid-feedback">Please provide a valid promo code!</div>
-                                            </div>
-                                            <button class="btn btn-outline-primary btn-block" type="submit">Check mã</button>
-                                        </form>
+                                <h4 style="margin-right:40px;display: block;width: 60%;"  class="cart-item-title">
+                                    {{value.san_pham.tensp}}</h4>
+                                <span style="margin-right:40px" class="cart-column cart-price">{{value.san_pham.gia}}</span>
+                                <span style="margin-right:40px"> x </span>
+
+                                <div class="cart-quantity cart-column">
+                                    <input class="cart-quantity-input" type="number" value="1">
+                                    <button class="btn btn-danger" type="button">Xóa</button>
+                                </div>
+
+                                <!-- <div class="cart-quantity cart-column">
+                                    <div class="buttons_added">
+                                        <input class="cart-quantity-input" aria-label="quantity" max="100" min="0"
+                                            name="" type="number" value="1"
+                                            style="border: 1px solid rgba(0, 0, 0, 0.171);">
                                     </div>
-                                </div>
+                                    <button style="margin-top:10px" class="btn btn-danger" type="button">Xóa</button>
+                                </div> -->
                             </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="accordion-heading font-weight-semibold"><a class="collapsed"
-                                            href="#shipping" role="button" data-toggle="collapse" aria-expanded="true"
-                                            aria-controls="shipping">Địa chỉ giao hàng<span
-                                                class="accordion-indicator"><svg xmlns="http://www.w3.org/2000/svg"
-                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" class="feather feather-chevron-up">
-                                                    <polyline points="18 15 12 9 6 15"></polyline>
-                                                </svg></span></a></h3>
-                                </div>
-                                <div class="collapse" id="shipping" data-parent="#cart-accordion">
-                                    <div class="card-body">
-                                        <form class="needs-validation" novalidate="">
-                                            <div class="form-group">
-                                                <select class="form-control custom-select" required="">
-                                                    <option value="">Tỉnh / thành phố</option>
-                                                    <option value="Australia">Hà Nội</option>
-                                                    <option value="Belgium">Hồ Chí Minh</option>
-                                                    <option value="Canada">Bắc Giang</option>
-                                                    <option value="Finland">Hòa Bình</option>
-                                                    <option value="Mexico">Bắc Kạn</option>
-                                                </select>
-                                                <div class="invalid-feedback">Please choose your country!</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="form-control custom-select" required="">
-                                                    <option value="">Choose your city</option>
-                                                    <option value="Bern">Bern</option>
-                                                    <option value="Brussels">Brussels</option>
-                                                    <option value="Canberra">Canberra</option>
-                                                    <option value="Helsinki">Helsinki</option>
-                                                    <option value="Mexico City">Mexico City</option>
-                                                    <option value="Ottawa">Ottawa</option>
-                                                    <option value="Washington D.C.">Washington D.C.</option>
-                                                    <option value="Wellington">Wellington</option>
-                                                </select>
-                                                <div class="invalid-feedback">Please choose your city!</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="form-control" type="text" placeholder="ZIP / Postal code"
-                                                    required="">
-                                                <div class="invalid-feedback">Please provide a valid zip!</div>
-                                            </div>
-                                            <button class="btn btn-outline-primary btn-block" type="submit">Calculate
-                                                shipping</button>
-                                        </form>
-                                    </div>
-                                </div>
+                            {% endfor %}
+
+                            <div class="cart-total">
+                                <h2 class="h6 px-4 py-3 bg-secondary text-center">Tổng tiền</h2>
+                                <div class="h3 font-weight-semibold text-center py-3 cart-total-price">47300</div>
                             </div>
                         </div>
+                    
+                    <a href="{% url 'cart_clear' %}">Xóa toàn bộ giỏ hàng</a>
+                    <!-- Sidebar-->
+                    <div class="col-xl-3 col-md-4 pt-3 pt-md-0">
+                        <a class="btn btn-primary btn-block" href="/giohang/clear">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-credit-card mr-2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>Xác nhận</a>
                     </div>
                 </div>
             </div>
@@ -310,13 +263,16 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <h6>VỀ CHÚNG TÔI</h6>
-                            <p class="text-justify">besafe.com - <i>SHOPPING AN TOÀN MÙA DỊCH </i> là một website mua
+                            <p class="text-justify">besafe.com - <i>SHOPPING AN TOÀN MÙA DỊCH </i> là một website
+                                mua
                                 sắm
                                 nổi
-                                tiếng lâu đời và có truyền thống bán các sản phẩm y tế. Mùa dịch COVID-19, nhu cầu mua
+                                tiếng lâu đời và có truyền thống bán các sản phẩm y tế. Mùa dịch COVID-19, nhu cầu
+                                mua
                                 sắm
                                 vật
-                                tư y tế ngày càng cao, hãy mua chúng tôi, vì chúng tôi luôn đáp ứng những nhu cầu tốt
+                                tư y tế ngày càng cao, hãy mua chúng tôi, vì chúng tôi luôn đáp ứng những nhu cầu
+                                tốt
                                 nhất
                                 của
                                 bạn. Luôn có những đợt giảm giá siêu khuyến mãi hấp dẫn oke la chưa</p>
@@ -331,7 +287,8 @@
                             <h6>Danh mục</h6>
                             <ul class="footer-links">
                                 <li><a href="http://scanfcode.com/category/c-language/">Khẩu trang</a></li>
-                                <li><a href="http://scanfcode.com/category/front-end-development/">Nước rửa tay</a></li>
+                                <li><a href="http://scanfcode.com/category/front-end-development/">Nước rửa tay</a>
+                                </li>
                                 <li><a href="http://scanfcode.com/category/back-end-development/">Nhiệt kế</a></li>
                                 <li><a href="http://scanfcode.com/category/java-programming-language/">Máy lọc không
                                         khí</a>
@@ -381,6 +338,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="{% static 'js\modal.js' %} "></script>
     <script src="{% static 'js\login.js' %} "></script>
+    <script src="{% static 'js\giohang.js' %} "></script>
+
 </body>
 
 </html>

@@ -105,44 +105,6 @@
                         <a class="nav-link" href="{% url 'sanpham' %}" id="navbarDropdown">
                             <i style="color: black;" class="fas fa-shopping-cart"></i>
                         </a>
-                        <div class="dropdown-content" style="background-color:white">
-                            <h4 style="margin: 5px;border-bottom: 2px solid black;">
-                                <i class="fas fa-money-check-alt">
-                                    : 80000đ
-                                    <span class="badge"
-                                        style="background-color: #91dbde;border-radius: 7px; width: 10px; height: 20px;font-size: 20px;">
-                                        <p style="font-size: 15px">
-                                            2
-                                        </p>
-                                    </span>
-                                </i>
-
-                            </h4>
-                            <a class="dropdown-item" href="#">
-                                <div>
-                                    <img style="width: 100px;height: 100px"
-                                        src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
-                                    <h6 style="font-weight: bold;">Khẩu trang vải</h6>
-                                    <p>
-                                        Số lượng: 1
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div>
-                                    <img style="width: 100px;height: 100px"
-                                        src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
-                                    <h6 style="font-weight: bold;">Khẩu trang vải</h6>
-                                    <p>
-                                        Số lượng: 1
-                                    </p>
-                                </div>
-                            </a>
-                            <button type="button" class="btn btn-dark"
-                                style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
-                                Đặt hàng</button>
-                        </div>
-
                     </li>
                     <a href="">
                         <i style="color: black;" class="fas fa-search" style="margin-left: 15px;">
@@ -289,7 +251,7 @@
                                             <h6 class="mb-0">Họ và tên</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            Kenneth Valdez
+                                            {{kh.name}}
                                         </div>
                                     </div>
                                     <hr>
@@ -298,7 +260,7 @@
                                             <h6 class="mb-0">Địa chỉ</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            fip@jukmuh.al
+                                            {{kh.diachi}}
                                         </div>
                                     </div>
                                     <hr>
@@ -307,7 +269,7 @@
                                             <h6 class="mb-0">Điện thoại</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            (239) 816-9029
+                                            {{kh.sdt}}
                                         </div>
                                     </div>
                                     <hr>
@@ -316,16 +278,16 @@
                                             <h6 class="mb-0">Email</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            (320) 380-4539
+                                            {{user.email}}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Ngày sinh</h6>
+                                            <h6 class="mb-0">Tuổi</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            Bay Area, San Francisco, CA
+                                            {{kh.tuoi}}
                                         </div>
                                     </div>
                                     <hr>
@@ -334,7 +296,7 @@
                                             <h6 class="mb-0">Giới tính</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            Nữ
+                                            {{kh.gioi_tinh}}
                                         </div>
                                     </div>
                                 </div>

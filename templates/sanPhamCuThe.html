@@ -7,94 +7,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css\trangChu.css' %}">
     <link rel="stylesheet" href="{% static 'css\sanPham.css' %}">
-    <link rel="stylesheet" href="{% static 'css/sanPhamCuThe.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <title>Chi tiết sản phẩm</title>
-    <style>
-        body {
-            position: relative;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css\sanPhamCuThe.css' %}">
+    <link rel="stylesheet" href="{% static 'css\footer.css' %}">
+    <title>Trang chủ</title>
+    <title>Trang chủ/Sản phẩm/Chi tiết sản phẩm</title>
 </head>
 
 <body style="font-family: 'Hind Siliguri', sans-serif;color: #071434;" data-spy="scroll" data-target=".navbar"
     data-offset="50">
-    <!-- HEADER -->
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light header-color fixed-top">
-            <a class="navbar-brand" href="trangChu.html">
-                <img class="logo-header" src="{% static 'img\logo.jpg' %}" alt="error">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+   <!-- HEADER -->
+   <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light header-color fixed-top" style="width: 100%;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container-fluid content-navbar">
+            <div class="col-sm-4">
+                <a class="navbar-brand" href="{% url 'trangchu' %}">
+                    <img class="logo-header" src="{% static 'img\logo.jpg' %}" alt="error">
+                </a>
+            </div>
+            <div class="col-sm-6" style="border-right: 2px solid black; padding-left: 70px;">
+                <div class="button-header">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto" style="font-size: 17px;">
+                            <li class="nav-item active button-header-hover-li">
+                                <a class="nav-link" href="{% url 'trangchu' %}">
+                                    <i class="fas fa-home" aria-hidden="true"></i>
+                                    <span class="sr-only">(current)</span>
+                                    Trang chủ
+                                </a>
+                            </li>
+                            <li class="nav-item active button-header-hover-li">
+                                <a class="nav-link" href="#Flash sale">
+                                    <i class="fas fa-percentage"></i>
+                                    Flash sale
+                                </a>
+                            </li>
 
-            <form class="form-inline my-2 my-lg-0" style="margin-left: 25px;">
-                <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search"
-                    style="width: 577px;">
-                <!-- <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button> -->
-            </form>
+                            <li class="nav-item active button-header-hover-li">
+                                <a class="nav-link" href="#Best seller">
+                                    <i class="fab fa-hotjar"></i>
+                                   Siêu rẻ
+                                </a>
+                            </li>
 
-            <div class="button-header">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="trangChu.html"> Trang chủ
-                                <span class="sr-only">(current)</span></a>
-                        </li>
+                            <li class="nav-item dropdown active button-header-hover-li">
+                                <a class="nav-link" href="{% url 'sanpham' %}" id="navbarDropdown">
+                                    <i class="fab fa-product-hunt"></i>
+                                    Sản phẩm
+                                </a>
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item" href="#">Khẩu
+                                        trang</a>
+                                    <a class="dropdown-item" href="#">Xà phòng
+                                        - Nước rửa tay</a>
+                                    <a class="dropdown-item" href="#">Máy lọc
+                                        không khí</a>
+                                    <a class="dropdown-item" href="#">Đồ bảo
+                                        hộ</a>
+                                    <a class="dropdown-item" href="#">Nhiệt
+                                        kế</a>
+                                    <a class="dropdown-item" href="#">Nước xúc
+                                        miệng</a>
+                                    <a class="dropdown-item" href="#">Thực phẩm
+                                        chức năng</a>
+                                    <a class="dropdown-item" href="#">Dung dịch
+                                        khử khuẩn</a>
+                                </div>
+                            </li>
+                            <li class="nav-item active button-header-hover-li">
+                                <a class="nav-link" href="#Tin tức">
+                                    <i class="fas fa-newspaper    "></i>
+                                    Tin tức
+                                </a>
+                            </li>
+                            <li class="nav-item active button-header-hover-li">
+                                <a class="nav-link" href="#Liên hệ">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    Liên hệ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#Ở đây chúng tôi có ....">Danh mục</a>
-                        </li>
+            <div class="col-sm-2 icon-navbar">
+                <li class="nav-item dropdown active button-header-hover-li">
+                    <a class="nav-link" href="{% url 'giohang' %}" id="navbarDropdown">
+                        <i style="color: black;" class="fas fa-shopping-cart"></i>
+                    </a>
+                    <div class="dropdown-content" style="background-color:white">
+                        <h4 style="margin: 5px;border-bottom: 2px solid black;">
+                            <i class="fas fa-money-check-alt">
+                                : 80000đ
+                                <span class="badge"
+                                    style="background-color: #91dbde;border-radius: 7px; width: 10px; height: 20px;font-size: 20px;">
+                                    <p style="font-size: 15px">
+                                        2
+                                    </p>
+                                </span>
+                            </i>
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#Best seller">Best seller</a>
-                        </li>
-
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link" href="sanPham.html" id="navbarDropdown">Sản phẩm</a>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" href="#">Khẩu trang</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Nước rửa tay</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Nhiệt kế</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Máy lọc không khí</a>
+                        </h4>
+                        <a class="dropdown-item" href="#">
+                            <div>
+                                <img style="width: 100px;height: 100px"
+                                    src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
+                                <h6 style="font-weight: bold;">Khẩu trang vải</h6>
+                                <p>
+                                    Số lượng: 1
+                                </p>
                             </div>
-                        </li>
-                        <li class="nav-item active active">
-                            <a class="nav-link" href="#Tin tức">Tin tức</a>
-                        </li>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div>
+                                <img style="width: 100px;height: 100px"
+                                    src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
+                                <h6 style="font-weight: bold;">Khẩu trang vải</h6>
+                                <p>
+                                    Số lượng: 1
+                                </p>
+                            </div>
+                        </a>
+                        <button type="button" class="btn btn-dark"
+                            style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
+                            Đặt hàng</button>
+                    </div>
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#Liên hệ">Liên hệ</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Đăng ký</a>
-                        </li>
+                </li>
+                <a href="">
+                    <i style="color: black;" class="fas fa-search">
+                    </i>
+                </a>
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Đăng nhập</a>
+                <div class="dropdown" style="margin-left:-8px">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                        <i class="fas fa-user-ninja" style="margin-left: 20px;"></i>
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li role="presentation" style="margin: 10px">
+                            <a role="menuitem" tabindex="-1" href="{% url 'user' %}">
+                                <p style="color:black">
+                                    <i class="fas fa-user-shield"></i>
+                                    Thông tin
+                                </p>
+                            </a>
+                        </li>
+                        <li role="presentation" style="margin: 10px">
+                            <a role="menuitem" tabindex="-1" href="{% url 'giohang' %}">
+                                <p style="color:black">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    Đơn hàng
+                                </p>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </div>
+    </nav>
+</div>
+
     <!-- Content -->
     <div class="container">
         <!-- Breadcrumb -->
+        <!--  Breadcrumb -->
         <nav aria-label="breadcrumb" class="breadcrumb-button">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                <li class="breadcrumb-item"><a href="#">Tất cả</a></li>
-                <li class="breadcrumb-item"><a href="#">Khẩu trang</a></li>
+            <ol class="breadcrumb" style="background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.219) ;">
+                <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Sản phẩm</a></li>
+                <li class="breadcrumb-item"><a style="color: black" href="#">Sản phẩm cụ thể</a></li>
             </ol>
             <h1 style="color: #071434;font-weight: bold;font-size: 50px;">
                 Thông tin sản phẩm
@@ -102,8 +192,8 @@
         </nav>
 
         <div class="container khoi-danh-muc-lon">
-            <div class="container" ; style="margin-top:50px;margin-left:10px;;width: 40%;">
-                <img style="width: 500px; height: 500px" src="{{sanpham.anhsp.url}}" alt="error">
+            <div class="container" ; style="margin-top:50px;margin-left:10px;margin-right: 50px;width: 40%;">
+                <img style="width: 500px; height: 500px; margin-right: 50px;" src="{{sanpham.anhsp.url}}" alt="error">
             </div>
             <div class="container" style="margin-top:40px;margin-left:60px;width: 100%;">
                 <div class="column">
@@ -143,34 +233,28 @@
                         - Số lượng trong kho: {{sanpham.soluong}}
                     </h4>
                     <h4>
-                        - Xuất xứ:{{sanpham.xuatxu}}
+                        - Xuất xứ: {{sanpham.xuatxu}}
                     </h4>
                     <h4>
-                        - Thương hiệu:{{sanpham.thuonghieu}}
+                        - Thương hiệu: {{sanpham.thuonghieu}}
                     </h4>
                     <h4>
-                        - Chủng loại:{{sanpham.phanloai}}
+                        - Chủng loại: {{sanpham.phanloai}}
                     </h4>
 
                     <!-- Trigger/Open The Modal -->
+
                     <form action="{% url 'sanphamcuthe' sanpham.id %}" method="POST" >
                       {% csrf_token %}
                     <input hidden type="text" name='product' value='{{sanpham.id}}'>
-                    <button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}}" style="margin-left: 65%;">
+                    <button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                        <input class="float-right btn btn-light border btn-sm" type="submit"  value ='Thêm vào giỏ'>
+                        <a href="{% url 'cart_add' sanpham.id %}">Add To Cart</a>
+                       {% comment %}  <input class="float-right btn btn-light border btn-sm" type="submit"  value ='Thêm vào giỏ'> {% endcomment %}
                     </button>
                     </form>
                     <!-- The Modal -->
-                    <div id="myModal" class="modall" style="margin-top: 100px ;">
-                        <!-- Modal content -->
-                        <div class="modall-content">
-                            <span class="close">&times;</span>
-                            <h5>Bạn đã thêm thành công sản phẩm vào giỏ hàng
-                                <i class="fas fa-shopping-cart"></i>
-                            </h5>
-                        </div>
-                    </div>
+
                     <h4>
                         <i class="fab fa-get-pocket"></i>
                         Lựa chọn màu sắc:
@@ -188,7 +272,7 @@
                         Lựa chọn số lượng:
                         <div class="buttons_added" style="margin-top:20px">
                             <!--  <input class="minus is-form" type="button" value="-"> -->
-                            <input aria-label="quantity" max="100" min="0" id ="number" type="number" value="1"
+                            <input aria-label="quantity" max="100" min="0" name="" type="number" value=""
                                 style="border: 1px solid black;">
                             <!--  <input class="plus is-form" type="button" value="+"> -->
                         </div>
@@ -209,97 +293,96 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="container w3-container" style="margin-top: 50px; margin-bottom: 80px;">
+            <div class="w3-bar" style="border-bottom: 1px solid rgba(0, 0, 0, 0.233);">
+                <button class="w3-bar-item w3-button tablink"
+                    style="margin-right: 20px;border: 1px solid rgba(0, 0, 0, 0.116);" onclick="openCity(event,'mota')">
+                    <h3>Mô tả sản phẩm</h3>
+                </button>
+                <button class="w3-bar-item w3-button tablink"
+                    style="margin-right: 20px;border: 1px solid rgba(0, 0, 0, 0.116)"
+                    onclick="openCity(event,'huongdan')">
+                    <h3>Hướng dẫn sử dụng</h3>
+                </button>
+                <button class="w3-bar-item w3-button tablink" style="border: 1px solid rgba(0, 0, 0, 0.116)"
+                    onclick="openCity(event,'danhgia')">
+                    <h3>
+                        Đánh giá
+                    </h3>
+                </button>
+            </div>
 
-    <div class="container">
-        <!-- Collapse: Mô tả sản phẩm -->
-
-        <button type="button" class="collapsible">
-            <h3 style="color: black;">
-                <i class="fas fa-heart" aria-hidden="true"></i>
-                Mô tả sản phẩm
-            </h3>
-        </button>
-        <div class="content">
-            <h4>Được sản xuất bởi Thành Phát, uy tín, thương hiệu và có giấy tờ chứng minh nguồn gốc rõ ràng
-            </h4>
-        </div>
-        <button type="button" class="collapsible">
-            <h3 style="color: black;">
-                <i class="fas fa-heart" aria-hidden="true"></i>
-                Hướng dẫn sử dụng
-            </h3>
-        </button>
-        <div class="content">
-            <h4>Sử dụng ngay, giặt sau mỗi lần sử dụng. Thời gian sử dụng 30 ngày.
-            </h4>
-        </div>
-        <button type="button" class="collapsible">
-            <h3 style="color: black;">
-                <i class="fas fa-heart" aria-hidden="true"></i>
-                Đánh giá sản phẩm
-            </h3>
-            <button>
-                <div class="content">
-                    <div class="row d-flex justify-content-center mt-100 mb-100">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h4 class="card-title">Latest Comments</h4>
-                                </div>
-                                <div class="comment-widgets">
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row m-t-0">
-                                        <div class="p-2"><img
-                                                src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"
-                                                alt="user" width="50" class="rounded-circle"></div>
-                                        <div class="comment-text w-100">
-                                            <h6 class="font-medium">James Thomas</h6> <span class="m-b-15 d-block">This
-                                                is awesome website. I would love to comeback again. </span>
-                                            <div class="comment-footer"> <span class="text-muted float-right">April 14,
-                                                    2019</span> <button type="button"
-                                                    class="btn btn-cyan btn-sm">Edit</button> <button type="button"
-                                                    class="btn btn-success btn-sm">Publish</button> <button
-                                                    type="button" class="btn btn-danger btn-sm">Delete</button> </div>
-                                        </div>
-                                    </div> <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row">
-                                        <div class="p-2"><img
-                                                src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583319/AAA/3.jpg"
-                                                alt="user" width="50" class="rounded-circle"></div>
-                                        <div class="comment-text active w-100">
-                                            <h6 class="font-medium">Michael Hussey</h6> <span
-                                                class="m-b-15 d-block">Thanks bbbootstrap.com for providing such useful
-                                                snippets. </span>
-                                            <div class="comment-footer"> <span class="text-muted float-right">May 10,
-                                                    2019</span> <button type="button"
-                                                    class="btn btn-cyan btn-sm">Edit</button> <button type="button"
-                                                    class="btn btn-success btn-sm">Publish</button> <button
-                                                    type="button" class="btn btn-danger btn-sm">Delete</button> </div>
-                                        </div>
-                                    </div> <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row">
-                                        <div class="p-2"><img
-                                                src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"
-                                                alt="user" width="50" class="rounded-circle"></div>
-                                        <div class="comment-text w-100">
-                                            <h6 class="font-medium">Johnathan Doeting</h6> <span
-                                                class="m-b-15 d-block">Great industry leaders are not the real heroes of
-                                                stock market. </span>
-                                            <div class="comment-footer"> <span class="text-muted float-right">August 1,
-                                                    2019</span> <button type="button"
-                                                    class="btn btn-cyan btn-sm">Edit</button> <button type="button"
-                                                    class="btn btn-success btn-sm">Publish</button> <button
-                                                    type="button" class="btn btn-danger btn-sm">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <!-- Card -->
+            <div style="margin-top: 30px;">
+                <div id="mota" class="w3-container w3-border city">
+                    <h2 style="color: #4ea4a7;">Mô tả sản phẩm</h2>
+                    <h5 style="font-weight: normal;">
+                        {{sanpham.mota}}
+                    </h5>
+                </div>
+                <div id="huongdan" class="w3-container w3-border city" style="display:none">
+                    <h2 style="color: #4ea4a7;">Hướng dẫn sử dụng</h2>
+                    <h5 style="font-weight: normal;">Nước rửa tay Antabax Fresh Hydration nhẹ nhàng rửa sạch bụi bẩn, vi
+                        {{sanpham.hdsd}}
+                    </h5>
+                </div>
+                <div id="danhgia" class="w3-container w3-border city" style="display:none">
+                    <section class="content-item" id="comments" style="margin-left: 20px;">
+                        <!-- <div class="media">
+                            <a class="pull-left" href="#"><img class="media-object"
+                                    src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
+                            <form>
+                                <input type="text" name="search" placeholder="Nhập bình luận của bạn....">
+                            </form>
+                            <div class="custom-select">
+                                <select>
+                                    <option value="0">Chấm điểm:</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div> -->
+                        <!-- COMMENT 1 - END -->
+                        {% for item in nx %}
+                        <div class="media">
+                            <a class="pull-left" href="#"><img class="media-object"
+                                    src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
+                            <div class="media-body">
+                                <h4 class="media-heading"> {{ item.khach_hang.name }}</h4>
+                                <p> {{ item.binh_luan }}</p>
+                                <ul class="list-unstyled list-inline media-detail pull-left">
+                                    <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                                    <li><i class="fa fa-thumbs-up"></i>13</li>
+                                </ul>
+                                <h5 style="margin-left:70%">Chấm điểm: 5 </h5>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        {% endfor %}
+        </div>
+        </section>
     </div>
+    </div>
+    </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+    </script>
+    </div>
+
 
 
     <!-- Liên hệ -->
@@ -374,6 +457,89 @@
         </footer>
     </div>
 
+    <script>
+        var x, i, j, l, ll, selElmnt, a, b, c;
+        /* Look for any elements with the class "custom-select": */
+        x = document.getElementsByClassName("custom-select");
+        l = x.length;
+        for (i = 0; i < l; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+            ll = selElmnt.length;
+            /* For each element, create a new DIV that will act as the selected item: */
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected");
+            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+            x[i].appendChild(a);
+            /* For each element, create a new DIV that will contain the option list: */
+            b = document.createElement("DIV");
+            b.setAttribute("class", "select-items select-hide");
+            for (j = 1; j < ll; j++) {
+                /* For each option in the original select element,
+                create a new DIV that will act as an option item: */
+                c = document.createElement("DIV");
+                c.innerHTML = selElmnt.options[j].innerHTML;
+                c.addEventListener("click", function (e) {
+                    /* When an item is clicked, update the original select box,
+                    and the selected item: */
+                    var y, i, k, s, h, sl, yl;
+                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                    sl = s.length;
+                    h = this.parentNode.previousSibling;
+                    for (i = 0; i < sl; i++) {
+                        if (s.options[i].innerHTML == this.innerHTML) {
+                            s.selectedIndex = i;
+                            h.innerHTML = this.innerHTML;
+                            y = this.parentNode.getElementsByClassName("same-as-selected");
+                            yl = y.length;
+                            for (k = 0; k < yl; k++) {
+                                y[k].removeAttribute("class");
+                            }
+                            this.setAttribute("class", "same-as-selected");
+                            break;
+                        }
+                    }
+                    h.click();
+                });
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+            a.addEventListener("click", function (e) {
+                /* When the select box is clicked, close any other select boxes,
+                and open/close the current select box: */
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+        }
+
+        function closeAllSelect(elmnt) {
+            /* A function that will close all select boxes in the document,
+            except the current select box: */
+            var x, y, i, xl, yl, arrNo = [];
+            x = document.getElementsByClassName("select-items");
+            y = document.getElementsByClassName("select-selected");
+            xl = x.length;
+            yl = y.length;
+            for (i = 0; i < yl; i++) {
+                if (elmnt == y[i]) {
+                    arrNo.push(i)
+                } else {
+                    y[i].classList.remove("select-arrow-active");
+                }
+            }
+            for (i = 0; i < xl; i++) {
+                if (arrNo.indexOf(i)) {
+                    x[i].classList.add("select-hide");
+                }
+            }
+        }
+
+        /* If the user clicks anywhere outside the select box,
+        then close all select boxes: */
+        document.addEventListener("click", closeAllSelect);
+    </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
@@ -381,6 +547,16 @@
     <script src="{% static 'js\sanPhamCuThe.js' %} "></script>
     <script src="{% static 'js\modal.js' %} "></script>
     <script src="{% static 'js\collapsible.js' %} "></script>
+
+    <script>
+        var list = document.getElementsByClassName("themvaogio")
+        for (let index = 0; index < list.length; index++) {
+            list[index].onclick = function () {
+                alert("Bạn đã thêm thành công một sản phẩm vào giỏ hàng")
+                return false
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1077,18 +1077,21 @@ Liên hệ */
 .backgroundd {
     display: flex;
     min-height: 100vh;
+    background-image: ulr("https://image.freepik.com/free-photo/palm-leaves-pink-background-with-space-top_24972-53.jpg");
 }
 
 .container-lien-he {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
+    background-image: ulr("https://image.freepik.com/free-photo/palm-leaves-pink-background-with-space-top_24972-53.jpg");
 }
 
 .screenn {
     position: relative;
-    background: #90dbe0;
+    background: #90dbe0b4;
     border-radius: 15px;
+    background-image: ulr("https://image.freepik.com/free-photo/palm-leaves-pink-background-with-space-top_24972-53.jpg");
 }
 
 .screenn:after {
@@ -1520,4 +1523,12 @@ Liên hệ */
     .product-grid4 {
         margin-bottom: 30px
     }
+}
+.dathangthanhcong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
 }

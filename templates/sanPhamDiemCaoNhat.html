@@ -33,7 +33,7 @@
             </button>
             <div class="container-fluid content-navbar">
                 <div class="col-sm-4">
-                    <a class="navbar-brand" href="{% url 'Trangchu' %}">
+                    <a class="navbar-brand" href="{% url 'trangchu' %}">
                         <img class="logo-header" src="{% static 'img\logo.jpg' %}" alt="error">
                     </a>
                 </div>
@@ -42,23 +42,23 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active button-header-hover-li">
-                                    <a class="nav-link" href="{% url 'Trangchu' %}">
+                                    <a class="nav-link" href="{% url 'trangchu' %}">
                                         <i class="fas fa-home" aria-hidden="true"></i>
                                         <span class="sr-only">(current)</span>
                                         Trang chủ
                                     </a>
                                 </li>
                                 <li class="nav-item active button-header-hover-li">
-                                    <a class="nav-link" href="#Ở đây chúng tôi có ....">
-                                        <i class="fas fa-list" aria-hidden="true"></i>
-                                        Danh mục
+                                    <a class="nav-link" href="#Flash sale">
+                                        <i class="fas fa-percentage"></i>
+                                        Flash sale
                                     </a>
                                 </li>
 
                                 <li class="nav-item active button-header-hover-li">
                                     <a class="nav-link" href="#Best seller">
                                         <i class="fab fa-hotjar"></i>
-                                        Best seller
+                                        Siêu rẻ
                                     </a>
                                 </li>
 
@@ -68,13 +68,22 @@
                                         Sản phẩm
                                     </a>
                                     <div class="dropdown-content">
-                                        <form  method = "post" id="systemForm">
-                                            {% csrf_token %}
-                                            {% for item in lsp %}
-                                            <li >
-                                                <a class="dropdown-item" style="border: 2px solid black;"  href = "{% url 'loc_loaisp' item.id %} "> {{item.name}} </a> </button>  </li>
-                                            {% endfor %}
-                                        </form>
+                                        <a class="dropdown-item" href="#">Khẩu
+                                            trang</a>
+                                        <a class="dropdown-item" href="#">Xà phòng
+                                            - Nước rửa tay</a>
+                                        <a class="dropdown-item" href="#">Máy lọc
+                                            không khí</a>
+                                        <a class="dropdown-item" href="#">Đồ bảo
+                                            hộ</a>
+                                        <a class="dropdown-item" href="#">Nhiệt
+                                            kế</a>
+                                        <a class="dropdown-item" href="#">Nước xúc
+                                            miệng</a>
+                                        <a class="dropdown-item" href="#">Thực phẩm
+                                            chức năng</a>
+                                        <a class="dropdown-item" href="#">Dung dịch
+                                            khử khuẩn</a>
                                     </div>
                                 </li>
                                 <li class="nav-item active button-header-hover-li">
@@ -96,71 +105,33 @@
 
                 <div class="col-sm-2 icon-navbar">
                     <li class="nav-item dropdown active button-header-hover-li">
-                        <a class="nav-link" href="{% url 'sanpham' %}" id="navbarDropdown">
+                        <a class="nav-link" href="{% url 'giohang' %}" id="navbarDropdown">
                             <i style="color: black;" class="fas fa-shopping-cart"></i>
                         </a>
-                        <div class="dropdown-content" style="background-color:white">
-                            <h4 style="margin: 5px;border-bottom: 2px solid black;">
-                                <i class="fas fa-money-check-alt">
-                                    : 80000đ
-                                    <span class="badge"
-                                        style="background-color: #91dbde;border-radius: 7px; width: 10px; height: 20px;font-size: 20px;">
-                                        <p style="font-size: 15px">
-                                            2
-                                        </p>
-                                    </span>
-                                </i>
-
-                            </h4>
-                            <a class="dropdown-item" href="#">
-                                <div>
-                                    <img style="width: 100px;height: 100px" src="{{page_obj.anhsp}}" alt="error">
-                                    <h6 style="font-weight: bold;">Khẩu trang vải</h6>
-                                    <p>
-                                        Số lượng: 1
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <div>
-                                    <img style="width: 100px;height: 100px"
-                                        src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
-                                    <h6 style="font-weight: bold;">Khẩu trang vải</h6>
-                                    <p>
-                                        Số lượng: 1
-                                    </p>
-                                </div>
-                            </a>
-                            <button type="button" class="btn btn-dark"
-                                style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
-                                Đặt hàng</button>
-                        </div>
-
                     </li>
                     <a href="">
-                        <i style="color: black;" class="fas fa-search" style="margin-left: 15px;">
-
+                        <i style="color: black;" class="fas fa-search">
                         </i>
                     </a>
 
-                    <div class="dropdown">
+                    <div class="dropdown" style="margin-left:-8px">
                         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                             <i class="fas fa-user-ninja" style="margin-left: 20px;"></i>
                             <span class="caret"></span></button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                             <li role="presentation" style="margin: 10px">
-                                <a role="menuitem" tabindex="-1" href="dangKydangNhap.html">
+                                <a role="menuitem" tabindex="-1" href="{% url 'user' %}">
                                     <p style="color:black">
-                                        <i class="fas fa-user-plus"></i>
-                                        Đăng ký
+                                        <i class="fas fa-user-shield"></i>
+                                        Thông tin
                                     </p>
                                 </a>
                             </li>
                             <li role="presentation" style="margin: 10px">
-                                <a role="menuitem" tabindex="-1" href="dangKydangNhap.html">
+                                <a role="menuitem" tabindex="-1" href="giohang">
                                     <p style="color:black">
-                                        <i class="fas fa-sign-in-alt"></i>
-                                        Đăng nhập
+                                        <i class="fas fa-clipboard-list"></i>
+                                        Đơn hàng
                                     </p>
                                 </a>
                             </li>
@@ -175,9 +146,9 @@
         <!--  Breadcrumb -->
         <nav aria-label="breadcrumb" class="breadcrumb-button">
             <ol class="breadcrumb" style="background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.219) ;">
+                <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Trang chủ</a></li>
                 <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Sản phẩm</a></li>
-                <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Tất cả</a></li>
-                <li class="breadcrumb-item"><a style="color: black" href="#">Khẩu trang</a></li>
+                <li class="breadcrumb-item"><a style="color: black" href="#">Điểm cao nhất</a></li>
             </ol>
             <h1 style="color: #071434;font-weight: bold;font-size: 50px;">
                 Sản phẩm
@@ -190,7 +161,7 @@
                 <form class="form-inline my-2 my-lg-0" style="margin-right: 30px">
                     <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm"
                         aria-label="Search" style="width: 200px; border-radius: 5px;" name="search">
-                    <button class="btn btn-secondary my-2 my-sm-0">Search</button>
+                    <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
                 </form>
                 <div class="dropdown">
                     <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -205,162 +176,42 @@
                 </div>
                 <div class="so-ket-qua-hien-thi">
                     <h4>
-                        Hiển thị 5 kết quả tìm kiếm
+                        Hiển thị {{h}} kết quả tìm kiếm
                     </h4>
                 </div>
             </nav>
         </div>
 
-        <!-- Danh muc -->
-        <div class="container" style="margin-top:50px; margin-bottom:100px">
+         <!-- Danh muc -->
+         <div class="container" style="margin-top:50px; margin-bottom:50px">
             <div class="row">
                 <div class="col-sm-4 col-md-3">
                     <h4 style="font-weight: bold;text-align: center; margin-top: 10px; margin-bottom: 30px;">
                         Danh mục sản phẩm
                     </h4>
                     <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-
-                            <button   type="submit" value="Tất cả" form = "systemForm" name= "system">
-                            <a href = "{% url 'sanpham' %} "> Tất cả </a> </button>
-                            
-                            <span class="badge  badge-pill"
-                                style="background-color:rgb(76, 201, 207);color:white"></span>
-                        </li>
-                        <form  method = "post" id="systemForm">
-                        {% csrf_token %}
-                        {% for item in lsp %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
 
-                            <button   type="submit" value="{{item.name}}" form = "systemForm" name= "system">
-                            <a href = "{% url 'loc_loaisp' item.id %} "> {{item.name}} </a> </button>
-                            
+                            <button style="background-color: white;" type=" submit" value="Tất cả" form="systemForm"
+                                name="system">
+                                <a style="color: black;" href="{% url 'sanpham' %} "> Tất cả </a> </button>
+
                         </li>
-                        {% endfor %}
+                        <form method="post" id="systemForm">
+                            {% csrf_token %}
+                            {% for item in lsp %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                                <button style="background-color:  white" type="submit" value="{{item.name}}"
+                                    form="systemForm" name="system">
+                                    <a style="color: black;" href="{% url 'loc_loaisp' item.id %} "> {{item.name}} </a>
+                                </button>
+
+                            </li>
+                            {% endfor %}
                         </form>
                     </ul>
-                    <!-- Lọc theo khoảng giá -->
-                    <div class="container" style="border: 1px solid rgba(0, 0, 0, 0.185);margin-top: 20px;">
-                        <div class="row">
-                            <h5 style="margin-left: 20px;margin-top: 20px;font-weight: bold;">
-                                <i class="far fa-money-bill-alt"></i>
-                                Lọc theo khoảng giá
-                            </h5>
-                            <div class="container" style="border-top:1px solid rgba(0, 0, 0, 0.185);margin:10px">
-                                <div style="margin-top: 30px;">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div id="slider-range"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row slider-labels">
-                                        <div class="col-xs-6 caption">
-                                            <strong>Từ:</strong> <span id="slider-range-value1"></span>
-                                            
-                                        </div>
-                                        <br>
-                                        <div class="col-xs-6 text-right caption">
-                                            <strong>   đến :</strong> <span id="slider-range-value2"></span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <form>
-                                                <input type="hidden" name="min-value" value="">
-                                                <input type="hidden" name="max-value" value="">
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12" style="margin-bottom: 20px;">
-                                <div id="slider-range"></div>
-                            </div>
-                            <button class="btn btn-dark" style="margin-left: 40%;margin-bottom: 20px;">
-                                Lọc
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Lọc theo chủng loại -->
-                    <div class="container" style="border: 1px solid rgba(0, 0, 0, 0.185);margin-top: 20px;">
-                        <div class="row">
-                            <h5 style="margin-left: 20px;margin-top: 20px;font-weight: bold;">
-                                <i class="far fa-smile"></i>
-                                Lọc theo chủng loại
-                            </h5>
-                            <div style="margin:10px;margin-bottom: 0px;">
-                                <div class="containerr">
-                                 <form method = "POST">
-                                    {% csrf_token %}
-                                    {% for item in sp %}
-                                        <label class="containerr" >
-                                            <h6> {{item.phanloai }}</h6>
-                                            <input type="radio" value = "{{item.phanloai}}" checked="checked" name="choice">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    {% endfor %} 
-                                </form>
-                                </div>
-                            </div>
-                            <button class="btn btn-dark" style="margin-left: 40%;margin-bottom: 10px;" type="submit">Lọc </button>
-                        </div>
-                    </div>
-
-                    <!-- Lọc theo thương hiệu -->
-                    <div class="container" style="border: 1px solid rgba(0, 0, 0, 0.185);margin-top: 20px;">
-                        <div class="row">
-                            <h5 style="margin-left: 20px;margin-top: 20px;font-weight: bold;">
-                                <i class="far fa-smile"></i>
-                                Lọc theo thương hiệu
-                            </h5>
-                            <div style="margin:10px;margin-bottom: 0px;">
-                                <div class="containerr">
-                                    <form method = "POST">
-                                    {% csrf_token %}
-                                    {% for item in sp %}
-                                        <label class="containerr" >
-                                            <h6> {{item.phanloai }}</h6>
-                                            <input type="radio" value = "{{item.phanloai}}" checked="checked" name="choice">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    {% endfor %} 
-                                </form>
-                                </div>
-                            </div>
-                            <button class="btn btn-dark" style="margin-left: 40%;margin-bottom: 10px;">
-                                Lọc
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Lọc theo xuat xu -->
-                    <div class="container" style="border: 1px solid rgba(0, 0, 0, 0.185);margin-top: 20px;">
-                        <div class="row">
-                            <h5 style="margin-left: 20px;margin-top: 20px;font-weight: bold;">
-                                <i class="fas fa-globe-europe"></i>
-                                Lọc theo xuất xứ
-                            </h5>
-                            <div style="margin:10px;margin-bottom: 20px;">
-                                <div class="containerr">
-                                   <form method = "POST">
-                                    {% csrf_token %}
-                                    {% for item in sp_xuatxu %}
-                                        <label class="containerr" >
-                                            <h6> {{item.xuatxu}}</h6>
-                                            <input type="radio" value = "{{item.xuatxu}}" checked="checked" name="choice_xx">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    {% endfor %} 
-                                </form>
-                                </div>
-                            </div>
-                            <button class="btn btn-dark" style="margin-left: 40%;margin-bottom: 10px;">
-                                Lọc
-                            </button>
-                        </div>
-                    </div>
+                   
                 </div>
 
                 <!--  Hiển thị sản phẩm -->
@@ -369,7 +220,6 @@
                     <!-- Filters -->
                     <ul class="shop__sorting">
                         <li><a href="{% url 'sanpham' %}">Mới nhất</a></li>
-                        <li><a href="{% url 'banchay' %}">Bán chạy nhất</a></li>
                         <li  class="active"><a href="{% url 'diemcao' %}">Điểm cao nhất</a></li>
                         <li><a href="{% url 'tangdan' %}">Giá thấp đến cao</a></li>
                         <li><a href="{% url 'giamdan' %}">Giá cao đến thấp</a></li>
@@ -387,8 +237,10 @@
                                     <ul class="social">
                                         <li><a href="{% url 'sanphamcuthe' item.id %}"  data-tip="Chi tiết"><i
                                                     class="fa fa-eye"></i></a></li>
-                                        <li><a  class="themvaogio" href="#" data-tip="Thêm vào giỏ"><i
-                                                    class="fa fa-shopping-cart"></i></a>
+                                       <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
+                                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                <a href="{% url 'cart_add' item.id %}">Add To Cart</a>
+                                            </button>
                                         </li>
                                     </ul>
                                     <span class="product-new-label">MỚI</span>
@@ -400,7 +252,11 @@
                                         {{ item.gia }} VNĐ
                                         <span>{{ item.gia}} VNĐ</span>
                                     </div>
-                                    <a class="add-to-cart themvaogio"  href="">Thêm vào giỏ</a>
+                                     <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
+                                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                <a href="{% url 'cart_add' item.id %}">Add To Cart</a>
+                                            </button>
+                                        </li>
                                 </div>
                             </div>
                         </div>
@@ -444,6 +300,7 @@
                 </div> <!-- / .col-sm-8 -->
             </div> <!-- / .row -->
         </div>
+    </div>
 
         <!-- List icon -->
         <div class="container" style="border-top: 1px solid rgba(0, 0, 0, 0.158);margin-top: 50px;">
@@ -544,7 +401,7 @@
                             <ul class="footer-links">
                                 <li><a href="{% url 'Trangchu' %}">Trang chủ</a></li>
                                 <li><a href="{% url 'Trangchu' %}">Danh mục</a></li>
-                                <li><a href="{% url 'Trangchu' %}">Best seller</a></li>
+                                <li><a href="{% url 'Trangchu' %}">Siêu rẻ</a></li>
                                 <li><a href="{% url 'Trangchu' %}">Sản phẩm</a></li>
                                 <li><a href="{% url 'Trangchu' %}">Tin tức</a></li>
                                 <li><a href="{% url 'Trangchu' %}">Liên hệ</a></li>
