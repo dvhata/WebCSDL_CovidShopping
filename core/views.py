@@ -15,17 +15,34 @@ from django.db.migrations import operations
 from order.models import Don_dat_hang
 from cart.models import gio_hang
 from user.models import Khach_hang
+from review.models import Nhan_xet
+from order.models import Don_dat_hang
 from django.contrib.auth.models import User
 from user_auth.forms import RegisterForm
+from django.utils import timezone
+import random
+
 # Create your views here.
 
 
 
+class HomeVieww(View):
+    def get(self, request):
+        s = Don_dat_hang.objects.all()
+        sp = San_pham.objects.order_by("gia")[:5]
+        products = list(San_pham.objects.all())
+        prod = random.sample(products, 4)
+        
+        return render(request,'trangChu.html', {"sp":sp ,'product': prod})
+
 class HomeView(View):
     def get(self, request):
         s = Don_dat_hang.objects.all()
-    
-        return render(request,'trangChu.html')
+        sp = San_pham.objects.order_by("gia")[:5]
+        products = list(San_pham.objects.all())
+        prod = random.sample(products,4)
+        return render(request,'trangChuafterlogin.html', {"sp":sp , 'product': prod})
+
 class SanphamView(View):    
     def get(self,request):
         #Tìm spp theo thanh search trên wed
@@ -72,28 +89,77 @@ def register(request):
     registerForm = RegisterForm() 
     return render(request, 'register.html', {'form':registerForm})
 
-@login_required(login_url="/users/login")
+@login_required
 def cart_add(request, id):
-    cart = gio_hang(request)
+    userId = User.objects.get(username=request.user)
+    if not userId:
+        # error
+        pass
+    kh = Khach_hang.objects.get(user_id=userId)
     product = San_pham.objects.get(id=id)
-    kh = Khach_hang.object.get(user = request.user)
-    cart.add(khach_hang = kh , san_pham = product , so_luong=1)
+    cart = gio_hang(khach_hang = kh , san_pham = product , so_luong=1)
+    cart.save()
     return redirect("sanpham")
+
+@login_required()
+def order_cart(request):
+    userId = User.objects.get(username=request.user)
+    if not userId:
+        # error
+        pass
+    kh = Khach_hang.objects.get(user_id=userId)
+    gio_hang.objects.filter(khach_hang=kh).delete()
+    return render(request,'datHangThanhCong.html')
+
+@login_required
+def cart_clear(request):
+    userId = User.objects.get(username=request.user)
+    if not userId:
+        # error
+        pass
+    kh = Khach_hang.objects.get(user_id=userId)
+    gio_hang.objects.filter(khach_hang=kh).delete()
+    return redirect("trangchu")
+
 
 @login_required
 def giohangview(request):
-    return render(request, 'giohang.html')
+    context = {
+        'items': []
+    }
+    userId = User.objects.get(username=request.user)
+    if not userId:
+        # error
+        pass
+    kh = Khach_hang.objects.get(user_id=userId)
+    cart = gio_hang.objects.filter(khach_hang=kh)
 
+    for each in cart:
+        spId = each.san_pham_id
+        sp = San_pham.objects.get(id=spId)
+        sl = each.so_luong
+        context['items'].append({
+            'san_pham' : sp,
+            'so_luong' : sl
+        })
+    if cart:
+        don = Don_dat_hang(khach_hang=kh,san_pham=sp,so_luong=1,ngay_dat=timezone.now()
+        ,ngay_giao=timezone.now(),tinh_trang='đã đặt',hinh_thuc_thanh_toan='thanh toán khi nhận hàng')
+        don.save()
+    return render(request, 'giohang.html', context=context)
+
+def userview(request):
+    userId = User.objects.get(username=request.user)
+    kh = Khach_hang.objects.get(user_id=userId)
+    return render(request, 'user.html',{'kh':kh, 'user': userId})
    
 #san phẩm cụ thể
 class Index(View):
     def get(self,request,sanpham_id):
         request.session.clear()
         k = San_pham.objects.get(pk = sanpham_id)
-    #if operation == 'add':
-    #    hang = gio_hang.objects.create(khach_hang= request.user, san_pham=sanpham_id)
-       
-        return render(request, 'sanPhamCuThe.html', {'sanpham':k})  
+        nx = Nhan_xet.objects.filter(san_pham=k)
+        return render(request, 'sanPhamCuThe.html', {'sanpham':k, 'nx':nx})  
 
 
 #lọc theo loại sp
@@ -124,16 +190,25 @@ def banchayview(request):
         k = San_pham.objects.filter(tensp__icontains=kw)
     else:
         k = San_pham.objects.order_by("-id")
-    banchay = Don_dat_hang.objects.values('san_pham').annotate(dcount = Count('san_pham')).order_by()
-
     h = k.count()
     lsp = Loaisp.objects.all() #in ra các loại sp
     sp = San_pham.objects.all().values('phanloai').distinct() #Lọc theo chủng loại
     sp_xuatxu = San_pham.objects.all().values('xuatxu').distinct() #Lọc theo  xuất xứ
     sp_thuonghieu = San_pham.objects.all().values('thuonghieu').distinct() #Lọc theo thương hiệu
+    # thử làm bán chạy
+    context = {
+        'items': []
+    }
+    don= Don_dat_hang.objects.values('san_pham').annotate(dcount = Count('san_pham')).order_by()
 
-    return render(request, "sanPhamBanChayNhat.html", { 'sanpham' : k ,'h': h,'lsp': lsp ,'sp': sp,'banchay':banchay ,'sp_xuatxu':sp_xuatxu, 
-    'sp_thuonghieu':sp_thuonghieu})
+    for each in don:
+        spId = list(each.get('sanpham'))
+        sp = San_pham.objects.get(id=spId.id)
+        context['items'].append({
+            'san_pham' : sp
+        })
+    return render(request, "sanPhamBanChayNhat.html", { 'sanpham' : k ,'h': h,'lsp': lsp ,'sp': sp ,'sp_xuatxu':sp_xuatxu, 
+    'sp_thuonghieu':sp_thuonghieu},context=context)
     
 def diemcaoview(request):
     if request.GET.get("search"):
