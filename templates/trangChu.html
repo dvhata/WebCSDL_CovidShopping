@@ -286,7 +286,7 @@
                             <div class="price">{{item.gia}}
                                 <span>100000đ</span>
                             </div>
-                            <a class="add-to-cart themvaogio" href="{% url 'cart_add' item.id %}">+ Thêm vào giỏ</a>
+                            <a class="add-to-cart themvaogio" href="{% url 'cart_add' item.id 'sanpham' %}">+ Thêm vào giỏ</a>
                         </div>
                     </div>
                 </div>
@@ -416,7 +416,7 @@
                             <div class="price">{{item.gia}}
                                 <span>50000</span>
                             </div>
-                            <a class="add-to-cart themvaogio" href="{% url 'cart_add' item.id %}">+ Thêm vào giỏ</a>
+                            <a class="add-to-cart themvaogio" href="{% url 'cart_add' item.id 'sanpham' %}">+ Thêm vào giỏ</a>
                         </div>
                     </div>
                     

@@ -239,7 +239,7 @@
                                                     class="fa fa-eye"></i></a></li>
                                        <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
                                                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                <a href="{% url 'cart_add' item.id %}">Add To Cart</a>
+                                                <a href="{% url 'cart_add' item.id 'giamdan'%}">Add To Cart</a>
                                             </button>
                                         </li>
                                     </ul>
@@ -254,7 +254,7 @@
                                     </div>
                                     <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
                                                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                <a href="{% url 'cart_add' item.id %}">Add To Cart</a>
+                                                <a href="{% url 'cart_add' item.id 'giamdan' %}">Add To Cart</a>
                                             </button>
                                         </li>
                                 </div>
