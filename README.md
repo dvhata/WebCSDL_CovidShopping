@@ -8,6 +8,7 @@
 
 # Chức năng:
 Admin (django)
+
 Người dùng: 
 + Thêm 1 / nhiều sản phẩm vào giỏ hàng
 + Xem giỏ hàng, thay đổi số lượng và đặt hàng
