@@ -2,13 +2,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  border: 3px solid rgba(0, 0, 0, 0.281);
+
 }
 
 th, td {
   text-align: left;
   padding: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.342);
-}
 
-tr:nth-child(even){background-color:rgb(130, 192, 228)}
+}

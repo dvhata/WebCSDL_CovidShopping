@@ -38,7 +38,7 @@
                 </button>
                 <div class="container-fluid content-navbar">
                     <div class="col-sm-4">
-                        <a class="navbar-brand" href="{% url 'sanpham' %}">
+                        <a class="navbar-brand" href="{% url 'trangchu' %}">
                             <img class="logo-header" src="{% static 'img\logo.jpg' %}" alt="error">
                         </a>
                     </div>
@@ -47,23 +47,23 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active button-header-hover-li">
-                                        <a class="nav-link" href="{% url 'sanpham' %}">
+                                        <a class="nav-link" href="{% url 'trangchu' %}">
                                             <i class="fas fa-home" aria-hidden="true"></i>
                                             <span class="sr-only">(current)</span>
                                             Trang chủ
                                         </a>
                                     </li>
                                     <li class="nav-item active button-header-hover-li">
-                                        <a class="nav-link" href="#Ở đây chúng tôi có ....">
-                                            <i class="fas fa-list" aria-hidden="true"></i>
-                                            Danh mục
+                                        <a class="nav-link" href="#Flash sale">
+                                            <i class="fas fa-percentage"></i>
+                                            Flash sale
                                         </a>
                                     </li>
 
                                     <li class="nav-item active button-header-hover-li">
                                         <a class="nav-link" href="#Best seller">
                                             <i class="fab fa-hotjar"></i>
-                                            Best seller
+                                            Siêu rẻ
                                         </a>
                                     </li>
 
@@ -73,21 +73,21 @@
                                             Sản phẩm
                                         </a>
                                         <div class="dropdown-content">
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Khẩu
+                                            <a class="dropdown-item" href="#">Khẩu
                                                 trang</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Xà phòng
+                                            <a class="dropdown-item" href="#">Xà phòng
                                                 - Nước rửa tay</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Máy lọc
+                                            <a class="dropdown-item" href="#">Máy lọc
                                                 không khí</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Đồ bảo
+                                            <a class="dropdown-item" href="#">Đồ bảo
                                                 hộ</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Nhiệt
+                                            <a class="dropdown-item" href="#">Nhiệt
                                                 kế</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Nước xúc
+                                            <a class="dropdown-item" href="#">Nước xúc
                                                 miệng</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Thực phẩm
+                                            <a class="dropdown-item" href="#">Thực phẩm
                                                 chức năng</a>
-                                            <a class="dropdown-item" style="border: 2px solid black;" href="#">Dung dịch
+                                            <a class="dropdown-item" href="#">Dung dịch
                                                 khử khuẩn</a>
                                         </div>
                                     </li>
@@ -113,45 +113,6 @@
                             <a class="nav-link" href="{% url 'giohang' %}" id="navbarDropdown">
                                 <i style="color: black;" class="fas fa-shopping-cart"></i>
                             </a>
-                            <div class="dropdown-content" style="background-color:white">
-                                <h4 style="margin: 5px;border-bottom: 2px solid black;">
-                                    <i class="fas fa-money-check-alt">
-                                        : 80000đ
-                                        <span class="badge"
-                                            style="background-color: #91dbde;border-radius: 7px; width: 10px; height: 20px;font-size: 20px;">
-                                            <p style="font-size: 15px">
-                                                2
-                                            </p>
-                                        </span>
-                                    </i>
-
-                                </h4>
-
-                                {% comment %} <a class="dropdown-item" href="#">
-                                    <div>
-                                        <img style="width: 100px;height: 100px"
-                                            src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
-                                        <h6 style="font-weight: bold;">Khẩu trang vải</h6>
-                                        <p>
-                                            Số lượng: 1
-                                        </p>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <div>
-                                        <img style="width: 100px;height: 100px"
-                                            src="img\khau-trang-vai-khang-khuan-nagakawa.jpg" alt="error">
-                                        <h6 style="font-weight: bold;">Khẩu trang vải</h6>
-                                        <p>
-                                            Số lượng: 1
-                                        </p>
-                                    </div>
-                                </a>
-                                <button type="button" class="btn btn-dark"
-                                    style="margin-left: 30px; margin-top:15px;margin-bottom: 15px">
-                                    Đặt hàng</button>
-                            </div>
-                            {% endcomment %}
                         </li>
                         <a href="">
                             <i style="color: black;" class="fas fa-search">
@@ -173,7 +134,7 @@
                                     </a>
                                 </li>
                                 <li role="presentation" style="margin: 10px">
-                                    <a role="menuitem" tabindex="-1" href="card.html">
+                                    <a role="menuitem" tabindex="-1" href="giohang">
                                         <p style="color:black">
                                             <i class="fas fa-clipboard-list"></i>
                                             Đơn hàng
@@ -185,7 +146,6 @@
                     </div>
             </nav>
         </div>
-
         <!-- GIỎ HÀNG -->
 
         <div class="container pb-5" style="margin-top:150px">
@@ -205,46 +165,39 @@
                             </svg>Tiếp tục mua sắm</a>
                     </h2>
 
-                    
-                        <div class="cart-items" style="margin-top:20px">
-                            {% for value in items %}
-                            <div class="cart-row" style="display:flex;flex-wrap: nowrap;margin-top:30px">
-                                <div class="cart-item cart-column" style="margin-right:20px;">
-                                    <img class="cart-item-image" src="{{value.san_pham.anhsp.url}}" width="100"
-                                        height="100">
 
-                                </div>
-                                <h4 style="margin-right:40px;display: block;width: 60%;"  class="cart-item-title">
-                                    {{value.san_pham.tensp}}</h4>
-                                <span style="margin-right:40px" class="cart-column cart-price">{{value.san_pham.gia}}</span>
-                                <span style="margin-right:40px"> x </span>
+                    <div class="cart-items" style="margin-top:20px">
+                        {% for value in items %}
+                        <div class="cart-row" style="display:flex;flex-wrap: nowrap;margin-top:30px">
+                            <div class="cart-item cart-column" style="margin-right:20px;">
+                                <img class="cart-item-image" src="{{value.san_pham.anhsp.url}}" width="100"
+                                    height="100">
 
-                                <div class="cart-quantity cart-column">
-                                    <input class="cart-quantity-input" type="number" value="1">
-                                    <button class="btn btn-danger" type="button">Xóa</button>
-                                </div>
-
-                                <!-- <div class="cart-quantity cart-column">
-                                    <div class="buttons_added">
-                                        <input class="cart-quantity-input" aria-label="quantity" max="100" min="0"
-                                            name="" type="number" value="1"
-                                            style="border: 1px solid rgba(0, 0, 0, 0.171);">
-                                    </div>
-                                    <button style="margin-top:10px" class="btn btn-danger" type="button">Xóa</button>
-                                </div> -->
                             </div>
-                            {% endfor %}
-
-                            <div class="cart-total">
-                                <h2 class="h6 px-4 py-3 bg-secondary text-center">Tổng tiền</h2>
-                                <div class="h3 font-weight-semibold text-center py-3 cart-total-price">47300</div>
+                            <h4 style="margin-right:40px;display: block;width: 60%;" class="cart-item-title">
+                                {{value.san_pham.tensp}}</h4>
+                            <span style="margin-right:40px" class="cart-price cart-column">{{value.san_pham.gia}}</span>
+                            <span style="margin-right:40px"> x </span>
+                            <div class="cart-quantity cart-column">
+                                <div class="buttons_added">
+                                    <!--  <input class="minus is-form" type="button" value="-"> -->
+                                    <input class="cart-quantity-input" aria-label="quantity" max="100" min="0" name=""
+                                        type="number" value="1" style="border: 1px solid rgba(0, 0, 0, 0.171);">
+                                    <!--  <input class="plus is-form" type="button" value="+"> -->
+                                </div>
+                                <button style="margin-top:10px" class="btn btn-danger" type="button">Xóa</button>
                             </div>
                         </div>
-                    
-                    <a href="{% url 'cart_clear' %}">Xóa toàn bộ giỏ hàng</a>
+                        {% endfor %}
+
+                        <div class="cart-total">
+                            <h2 class="h6 px-4 py-3 bg-secondary text-center">Tổng tiền</h2>
+                            <div class="h3 font-weight-semibold text-center py-3 cart-total-price"></div>
+                        </div>
+                    </div>
                     <!-- Sidebar-->
-                    <div class="col-xl-3 col-md-4 pt-3 pt-md-0">
-                        <a class="btn btn-primary btn-block" href="/giohang/clear">
+                    <div style="background-color: #a2d6d8;">
+                        <a class="btn btn-block" href="/giohang/clear">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-credit-card mr-2">
@@ -252,6 +205,11 @@
                                 <line x1="1" y1="10" x2="23" y2="10"></line>
                             </svg>Xác nhận</a>
                     </div>
+                    <button class="btn btn-outline-light" style="margin-top: 20px;">
+                        <a style="color: black;" href="{% url 'cart_clear'%}">
+                            <i class="fas fa-trash"></i>
+                            Xóa toàn bộ giỏ hàng</a>
+                    </button>
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@ import random
 class HomeVieww(View):
     def get(self, request):
         s = Don_dat_hang.objects.all()
-        sp = San_pham.objects.order_by("gia")[:5]
+        sp = San_pham.objects.order_by("gia")[:4]
         products = list(San_pham.objects.all())
         prod = random.sample(products, 4)
         
@@ -38,11 +38,10 @@ class HomeVieww(View):
 class HomeView(View):
     def get(self, request):
         s = Don_dat_hang.objects.all()
-        sp = San_pham.objects.order_by("gia")[:5]
+        sp = San_pham.objects.order_by("gia")[:4]
         products = list(San_pham.objects.all())
         prod = random.sample(products,4)
         return render(request,'trangChuafterlogin.html', {"sp":sp , 'product': prod})
-
 class SanphamView(View):    
     def get(self,request):
         #Tìm spp theo thanh search trên wed
@@ -68,6 +67,9 @@ class SanphamView(View):
         return render(request, 'sanPham.html', {'page_obj': page_obj , 'h': h, 'lsp': lsp , 'sp': sp,'sp_xuatxu':sp_xuatxu,
         'sp_thuonghieu':sp_thuonghieu})
 
+# def sanphamcutheView():
+
+
 class SiteLoginView(LoginView):
     template_name = "login.html"
 def register(request):
@@ -79,7 +81,9 @@ def register(request):
         username = request.POST['username']
         password = request.POST['password']
         try:
-            User.objects.create_user(username=username, password=password)
+            user = User.objects.create_user(username=username, password=password)
+            kh = Khach_hang(user=user)
+            kh.save()
             return redirect('/login')
         except Exception as e:
             context['error'] = e
@@ -90,7 +94,7 @@ def register(request):
     return render(request, 'register.html', {'form':registerForm})
 
 @login_required
-def cart_add(request, id):
+def cart_add(request, id, url):
     userId = User.objects.get(username=request.user)
     if not userId:
         # error
@@ -99,7 +103,7 @@ def cart_add(request, id):
     product = San_pham.objects.get(id=id)
     cart = gio_hang(khach_hang = kh , san_pham = product , so_luong=1)
     cart.save()
-    return redirect("sanpham")
+    return redirect(url)
 
 @login_required()
 def order_cart(request):
@@ -119,7 +123,7 @@ def cart_clear(request):
         pass
     kh = Khach_hang.objects.get(user_id=userId)
     gio_hang.objects.filter(khach_hang=kh).delete()
-    return redirect("trangchu")
+    return redirect("giohang")
 
 
 @login_required
@@ -152,11 +156,9 @@ def userview(request):
     userId = User.objects.get(username=request.user)
     kh = Khach_hang.objects.get(user_id=userId)
     return render(request, 'user.html',{'kh':kh, 'user': userId})
-   
 #san phẩm cụ thể
 class Index(View):
     def get(self,request,sanpham_id):
-        request.session.clear()
         k = San_pham.objects.get(pk = sanpham_id)
         nx = Nhan_xet.objects.filter(san_pham=k)
         return render(request, 'sanPhamCuThe.html', {'sanpham':k, 'nx':nx})  
@@ -195,21 +197,30 @@ def banchayview(request):
     sp = San_pham.objects.all().values('phanloai').distinct() #Lọc theo chủng loại
     sp_xuatxu = San_pham.objects.all().values('xuatxu').distinct() #Lọc theo  xuất xứ
     sp_thuonghieu = San_pham.objects.all().values('thuonghieu').distinct() #Lọc theo thương hiệu
+    
     # thử làm bán chạy
     context = {
-        'items': []
+        'items': [],
+        'sanpham' : k,
+        'h': h,
+        'lsp': lsp ,
+        'sp': sp ,
+        'sp_xuatxu' : sp_xuatxu, 
+        'sp_thuonghieu' : sp_thuonghieu,
     }
     don= Don_dat_hang.objects.values('san_pham').annotate(dcount = Count('san_pham')).order_by()
-
     for each in don:
-        spId = list(each.get('sanpham'))
-        sp = San_pham.objects.get(id=spId.id)
+        spId = each['san_pham']
+        sp = San_pham.objects.get(id=spId)
         context['items'].append({
             'san_pham' : sp
         })
-    return render(request, "sanPhamBanChayNhat.html", { 'sanpham' : k ,'h': h,'lsp': lsp ,'sp': sp ,'sp_xuatxu':sp_xuatxu, 
-    'sp_thuonghieu':sp_thuonghieu},context=context)
+    paginator = Paginator(k,9)
+    page_number = request.GET.get('page')
+    context['page_obj'] = paginator.get_page(page_number)
     
+    return render(request, "sanPhamBanChayNhat.html", context=context)
+
 def diemcaoview(request):
     if request.GET.get("search"):
         kw = request.GET.get("search")

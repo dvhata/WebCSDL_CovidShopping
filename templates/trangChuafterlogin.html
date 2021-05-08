@@ -266,7 +266,7 @@
                             <ul class="social">
                                 <li><a href="{% url 'sanphamcuthe' item.id %}" data-tip="Xem thêm"><i
                                             class="fa fa-search"></i></a></li>
-                                <li><a  href="{% url 'cart_add' item.id %}" data-tip="Thêm vào giỏ"><i
+                                <li><a  href="{% url 'cart_add' item.id 'sanpham'%}" data-tip="Thêm vào giỏ"><i
                                             class="fa fa-shopping-bag"></i></a></li>
                             </ul>
                             <span class="product-new-label">Sale</span>
@@ -284,7 +284,7 @@
                             <div class="price">{{item.gia}}
                                 <span>100000đ</span>
                             </div>
-                            <a style="color:#071434" href="{% url 'cart_add' item.id %}">+ Thêm vào giỏ</a>
+                            <a style="color:#071434" href="{% url 'cart_add' item.id 'sanpham' %}">+ Thêm vào giỏ</a>
                         </div>
                     </div>
                 </div>
@@ -396,7 +396,7 @@
                             <ul class="social">
                                 <li><a href="{% url 'sanphamcuthe' item.id %}" data-tip="Xem thêm"><i
                                             class="fa fa-search"></i></a></li>
-                                <li><a href="{% url 'cart_add' item.id %}" data-tip="Thêm vào giỏ"><i
+                                <li><a href="{% url 'cart_add' item.id 'sanpham' %}" data-tip="Thêm vào giỏ"><i
                                             class="fa fa-shopping-bag"></i></a></li>
                             </ul>
                             <span class="product-new-label">Sale</span>
@@ -414,7 +414,7 @@
                             <div class="price">{{item.gia}}
                                 <span>50000</span>
                             </div>
-                            <a style="color:#071434" href="{% url 'cart_add' item.id %}">+ Thêm vào giỏ</a>
+                            <a style="color:#071434" href="{% url 'cart_add' item.id 'sanpham'%}">+ Thêm vào giỏ</a>
                         </div>
                     </div>
 

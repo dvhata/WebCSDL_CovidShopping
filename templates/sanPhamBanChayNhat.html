@@ -67,10 +67,22 @@
                                         Sản phẩm
                                     </a>
                                     <div class="dropdown-content">
-                                       {% csrf_token %}
-                                            {% for item in lsp %}
-                                                <a class="dropdown-item" href="{% url 'loc_loaisp' item.id %}">{{item.name}}</a>
-                                        {% endfor %}
+                                        <a class="dropdown-item" href="#">Khẩu
+                                            trang</a>
+                                        <a class="dropdown-item" href="#">Xà phòng
+                                            - Nước rửa tay</a>
+                                        <a class="dropdown-item" href="#">Máy lọc
+                                            không khí</a>
+                                        <a class="dropdown-item" href="#">Đồ bảo
+                                            hộ</a>
+                                        <a class="dropdown-item" href="#">Nhiệt
+                                            kế</a>
+                                        <a class="dropdown-item" href="#">Nước xúc
+                                            miệng</a>
+                                        <a class="dropdown-item" href="#">Thực phẩm
+                                            chức năng</a>
+                                        <a class="dropdown-item" href="#">Dung dịch
+                                            khử khuẩn</a>
                                     </div>
                                 </li>
                                 <li class="nav-item active button-header-hover-li">
@@ -135,7 +147,7 @@
             <ol class="breadcrumb" style="background-color: white;border-bottom: 1px solid rgba(0, 0, 0, 0.219) ;">
                 <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Trang chủ</a></li>
                 <li class="breadcrumb-item"><a style="color: rgba(0, 0, 0, 0.479)" href="#">Sản phẩm</a></li>
-                <li class="breadcrumb-item"><a style="color: black" href="#">Mới nhất</a></li>
+                <li class="breadcrumb-item"><a style="color: black" href="#">Bán chạy nhất</a></li>
             </ol>
             <h1 style="color: #071434;font-weight: bold;font-size: 50px;">
                 Sản phẩm
@@ -341,8 +353,8 @@
                 <div class="col-sm-8 col-md-9">
                     <!-- Filters -->
                     <ul class="shop__sorting">
-                        <li class="active"><a href="{% url 'sanpham' %}">Mới nhất</a></li>
-                        <li><a href="{% url 'banchay' %}">Bán chạy nhất</a></li>
+                        <li ><a href="{% url 'sanpham' %}">Mới nhất</a></li>
+                        <li class="active"><a href="{% url 'banchay' %}">Bán chạy nhất</a></li>
                         <li><a href="{% url 'diemcao' %}">Điểm cao nhất</a></li>
                         <li><a href="{% url 'tangdan' %} ">Giá thấp đến cao</a></li>
                         <li><a href="{% url 'giamdan' %} ">Giá cao đến thấp</a></li>
@@ -360,7 +372,7 @@
                                     <ul class="social">
                                         <li><a href="{% url 'sanphamcuthe' item.id %}" data-tip="Chi tiết"><i
                                                     class="fa fa-eye"></i></a></li>
-                                        <li><a href="{% url 'cart_add' item.id 'sanpham' %}" data-tip="Thêm vào giỏ">
+                                        <li><a href="{% url 'cart_add' item.id 'banchay' %}" data-tip="Thêm vào giỏ">
                                             <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                         </a>
                                         </li>
@@ -374,7 +386,7 @@
                                         {{ item.gia }} VNĐ
                                         <span>{{ item.gia}} VNĐ</span>
                                     </div>
-                                    <a style="color:#071434" href="{% url 'cart_add' item.id 'sanpham' %}">+ Thêm vào giỏ</a>
+                                    <a style="color:#071434" href="{% url 'cart_add' item.id 'banchay' %}">+ Thêm vào giỏ</a>
                                 </div>
                             </div>
                         </div>

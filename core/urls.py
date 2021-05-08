@@ -22,9 +22,9 @@ urlpatterns = [
     path('tangdan/', core_view.tangdanview, name = 'tangdan'),
     path('user/',core_view.userview, name = 'user'),
     path('profile/',core_view.userview,name = 'profile'),
-    path('cart/add/<int:id>/', core_view.cart_add, name='cart_add'),
+    path('cart/add/<int:id>/<str:url>/', core_view.cart_add, name='cart_add'),
     path('giohang/clear', core_view.order_cart, name='clear_add'),
-    path('cart/cart_clear/', core_view.cart_clear, name='cart_clear'),
+    path('cart/cart_clear', core_view.cart_clear, name='cart_clear'),
     #path('cart/cart-detail/',core_view.cart_detail,name='cart_detail'),
    
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
