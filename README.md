@@ -7,9 +7,9 @@
 *Mô tả: Là nơi mua sắm, trang bị những đồ dùng cần thiết để bảo vệ sức khỏe của bản thân và gia đình, nhất là trong tình trạng dịch covid hoành hành
 
 # Chức năng:
-+ Admin (django)
+*Admin (django)
 
-+ Người dùng: 
+*Người dùng: 
 + Thêm 1 / nhiều sản phẩm vào giỏ hàng
 + Xem giỏ hàng, thay đổi số lượng và đặt hàng
 + Tìm kiếm sản phẩm
