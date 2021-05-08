@@ -235,10 +235,9 @@
                                     <ul class="social">
                                         <li><a href="{% url 'sanphamcuthe' item.id %}"  data-tip="Chi tiết"><i
                                                     class="fa fa-eye"></i></a></li>
-                                        <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
-                                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                <a href="{% url 'cart_add' item.id  'sanpham' %}">Add To Cart</a>
-                                            </button>
+                                        <li><a href="{% url 'cart_add' item.id  'sanpham' %}" data-tip="Thêm vào giỏ">
+                                            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                        </a>
                                         </li>
                                     </ul>
                                     <span class="product-new-label">MỚI</span>
@@ -250,11 +249,7 @@
                                         {{ item.gia }} VNĐ
                                         <span>{{ item.gia}} VNĐ</span>
                                     </div>
-                                     <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
-                                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                <a href="{% url 'cart_add' item.id 'tanggian' %}">Add To Cart</a>
-                                            </button>
-                                        </li>
+                                    <a style="color:#071434" href="{% url 'cart_add' item.id 'tanggian' %}">+ Thêm vào giỏ</a>
                                 </div>
                             </div>
                         </div>
