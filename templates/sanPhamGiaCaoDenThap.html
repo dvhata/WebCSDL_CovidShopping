@@ -24,7 +24,7 @@
 
 <body style="font-family: 'Hind Siliguri', sans-serif;color: #071434;" data-spy="scroll" data-target=".navbar"
     data-offset="50">
-     <!-- HEADER -->
+    <!-- HEADER -->
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light header-color fixed-top" style="width: 100%;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -176,14 +176,14 @@
                 </div>
                 <div class="so-ket-qua-hien-thi">
                     <h4>
-                        Hiển thị {{h}}   kết quả tìm kiếm
+                        Hiển thị {{h}} kết quả tìm kiếm
                     </h4>
                 </div>
             </nav>
         </div>
 
-         <!-- Danh muc -->
-         <div class="container" style="margin-top:50px; margin-bottom:50px">
+        <!-- Danh muc -->
+        <div class="container" style="margin-top:50px; margin-bottom:50px">
             <div class="row">
                 <div class="col-sm-4 col-md-3">
                     <h4 style="font-weight: bold;text-align: center; margin-top: 10px; margin-bottom: 30px;">
@@ -211,7 +211,7 @@
                             {% endfor %}
                         </form>
                     </ul>
-                   
+
                 </div>
 
                 <!--  Hiển thị sản phẩm -->
@@ -237,10 +237,9 @@
                                     <ul class="social">
                                         <li><a href="{% url 'sanphamcuthe' item.id %}" data-tip="Chi tiết"><i
                                                     class="fa fa-eye"></i></a></li>
-                                       <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
-                                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                <a href="{% url 'cart_add' item.id 'giamdan'%}">Add To Cart</a>
-                                            </button>
+                                        <li><a href="{% url 'cart_add' item.id 'giamdan'%}" data-tip="Thêm vào giỏ">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </a>
                                         </li>
                                     </ul>
                                     <span class="product-new-label">MỚI</span>
@@ -252,11 +251,8 @@
                                         {{ item.gia }} VNĐ
                                         <span>{{ item.gia}} VNĐ</span>
                                     </div>
-                                    <li><button id="myBtn" type="button" class="btn btn-success"  onclick="addCart({{sanpham.id}})" style="margin-left: 65%;">
-                                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                                <a href="{% url 'cart_add' item.id 'giamdan' %}">Add To Cart</a>
-                                            </button>
-                                        </li>
+                                    <a style="color:#071434" href="{% url 'cart_add' item.id 'giamdan' %}">+ Thêm vào
+                                        giỏ</a>
                                 </div>
                             </div>
                         </div>
@@ -300,152 +296,152 @@
                 </div> <!-- / .col-sm-8 -->
             </div> <!-- / .row -->
         </div>
-        </div>
+    </div>
 
-        <!-- List icon -->
-        <div class="container" style="border-top: 1px solid rgba(0, 0, 0, 0.158);margin-top: 50px;">
-            <div class="roww">
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src="https://designrshub-designrshub.netdna-ssl.com/wp-content/uploads/2012/10/12_boat_logo_design.png"
-                            alt="">
-                    </div>
+    <!-- List icon -->
+    <div class="container" style="border-top: 1px solid rgba(0, 0, 0, 0.158);margin-top: 50px;">
+        <div class="roww">
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src="https://designrshub-designrshub.netdna-ssl.com/wp-content/uploads/2012/10/12_boat_logo_design.png"
+                        alt="">
                 </div>
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30155755/346.png" alt="">
-                    </div>
+            </div>
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30155755/346.png" alt="">
                 </div>
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src=" https://images-platform.99static.com//wUy5ZlUtT2QfIhcE8FdJIe3X7go=/0x0:2000x2000/fit-in/500x500/99designs-contests-attachments/108/108292/attachment_108292669"
-                            alt="">
-                    </div>
+            </div>
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src=" https://images-platform.99static.com//wUy5ZlUtT2QfIhcE8FdJIe3X7go=/0x0:2000x2000/fit-in/500x500/99designs-contests-attachments/108/108292/attachment_108292669"
+                        alt="">
                 </div>
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Q28oEAorAbjCzryfu9739MgdjtPuBWNOUA&usqp=CAU"
-                            alt="">
-                    </div>
+            </div>
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Q28oEAorAbjCzryfu9739MgdjtPuBWNOUA&usqp=CAU"
+                        alt="">
                 </div>
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src="http://imgs.abduzeedo.com/files/articles/logo-design-work-paulius-kairevicius/633c22f2fb140ce225123d0dd02147c5.png"
-                            alt="">
-                    </div>
+            </div>
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src="http://imgs.abduzeedo.com/files/articles/logo-design-work-paulius-kairevicius/633c22f2fb140ce225123d0dd02147c5.png"
+                        alt="">
                 </div>
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src="https://designrshub-designrshub.netdna-ssl.com/wp-content/uploads/2012/10/12_boat_logo_design.png"
-                            alt="">
-                    </div>
+            </div>
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src="https://designrshub-designrshub.netdna-ssl.com/wp-content/uploads/2012/10/12_boat_logo_design.png"
+                        alt="">
                 </div>
-                <div class="columnn">
-                    <div class="cardd">
-                        <img style="width: 100px;height: 100px;"
-                            src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30155755/346.png" alt="">
-                    </div>
+            </div>
+            <div class="columnn">
+                <div class="cardd">
+                    <img style="width: 100px;height: 100px;"
+                        src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30155755/346.png" alt="">
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Liên hệ -->
-        <div id="Liên hệ">
-            <footer class="site-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <h6>VỀ CHÚNG TÔI</h6>
-                            <p class="text-justify">besafe.com - <i>SHOPPING AN TOÀN MÙA DỊCH </i> là một website
-                                mua
-                                sắm
-                                nổi
-                                tiếng lâu đời và có truyền thống bán các sản phẩm y tế. Mùa dịch COVID-19, nhu cầu
-                                mua
-                                sắm
-                                vật
-                                tư y tế ngày càng cao, hãy mua chúng tôi, vì chúng tôi luôn đáp ứng những nhu cầu
-                                tốt
-                                nhất
-                                của
-                                bạn. Luôn có những đợt giảm giá siêu khuyến mãi hấp dẫn oke la chưa</p>
-                            <p>
-                                Điện thoại: 0123456789
-                            </p>
-                            <p>Email: besafe.com</p>
-                            <p>Địa chỉ: 144 Xuân Thủy Cầu Giấy</p>
-                        </div>
-
-                        <div class="col-xs-6 col-md-3">
-                            <h6>Danh mục</h6>
-                            <ul class="footer-links">
-                                <li><a href="http://scanfcode.com/category/c-language/">Khẩu trang</a></li>
-                                <li><a href="http://scanfcode.com/category/front-end-development/">Nước rửa tay</a>
-                                </li>
-                                <li><a href="http://scanfcode.com/category/back-end-development/">Nhiệt kế</a></li>
-                                <li><a href="http://scanfcode.com/category/java-programming-language/">Máy lọc không
-                                        khí</a>
-                                </li>
-                                <li><a href="http://scanfcode.com/category/c-language/">Nhiệt kế</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-xs-6 col-md-3">
-                            <h6>PHÍM TẮT</h6>
-                            <ul class="footer-links">
-                                <li><a href="{% url 'Trangchu' %}">Trang chủ</a></li>
-                                <li><a href="{% url 'Trangchu' %}">Danh mục</a></li>
-                                <li><a href="{% url 'Trangchu' %}">Siêu rẻ</a></li>
-                                <li><a href="{% url 'Trangchu' %}">Sản phẩm</a></li>
-                                <li><a href="{% url 'Trangchu' %}">Tin tức</a></li>
-                                <li><a href="{% url 'Trangchu' %}">Liên hệ</a></li>
-                            </ul>
-                        </div>
+    <!-- Liên hệ -->
+    <div id="Liên hệ">
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h6>VỀ CHÚNG TÔI</h6>
+                        <p class="text-justify">besafe.com - <i>SHOPPING AN TOÀN MÙA DỊCH </i> là một website
+                            mua
+                            sắm
+                            nổi
+                            tiếng lâu đời và có truyền thống bán các sản phẩm y tế. Mùa dịch COVID-19, nhu cầu
+                            mua
+                            sắm
+                            vật
+                            tư y tế ngày càng cao, hãy mua chúng tôi, vì chúng tôi luôn đáp ứng những nhu cầu
+                            tốt
+                            nhất
+                            của
+                            bạn. Luôn có những đợt giảm giá siêu khuyến mãi hấp dẫn oke la chưa</p>
+                        <p>
+                            Điện thoại: 0123456789
+                        </p>
+                        <p>Email: besafe.com</p>
+                        <p>Địa chỉ: 144 Xuân Thủy Cầu Giấy</p>
                     </div>
-                    <hr>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-sm-6 col-xs-12">
-                            <p class="copyright-text">Copyright &copy; 2018 All Rights Reserved by
-                                <a href="{% url 'Trangchu' %}">Thao Hoa Company</a>.
-                            </p>
-                        </div>
 
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <ul class="social-icons">
-                                <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a></li>
-                                <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Danh mục</h6>
+                        <ul class="footer-links">
+                            <li><a href="http://scanfcode.com/category/c-language/">Khẩu trang</a></li>
+                            <li><a href="http://scanfcode.com/category/front-end-development/">Nước rửa tay</a>
+                            </li>
+                            <li><a href="http://scanfcode.com/category/back-end-development/">Nhiệt kế</a></li>
+                            <li><a href="http://scanfcode.com/category/java-programming-language/">Máy lọc không
+                                    khí</a>
+                            </li>
+                            <li><a href="http://scanfcode.com/category/c-language/">Nhiệt kế</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>PHÍM TẮT</h6>
+                        <ul class="footer-links">
+                            <li><a href="{% url 'Trangchu' %}">Trang chủ</a></li>
+                            <li><a href="{% url 'Trangchu' %}">Danh mục</a></li>
+                            <li><a href="{% url 'Trangchu' %}">Siêu rẻ</a></li>
+                            <li><a href="{% url 'Trangchu' %}">Sản phẩm</a></li>
+                            <li><a href="{% url 'Trangchu' %}">Tin tức</a></li>
+                            <li><a href="{% url 'Trangchu' %}">Liên hệ</a></li>
+                        </ul>
                     </div>
                 </div>
-            </footer>
-        </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text">Copyright &copy; 2018 All Rights Reserved by
+                            <a href="{% url 'Trangchu' %}">Thao Hoa Company</a>.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <ul class="social-icons">
+                            <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-        <script src="{% static 'js\filterPrice.js' %} "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'js\filterPrice.js' %} "></script>
 
-        <script>
-            var list = document.getElementsByClassName("themvaogio")
-            for (let index = 0; index < list.length; index++) {
-                list[index].onclick = function () {
-                    alert("Bạn đã thêm thành công một sản phẩm vào giỏ hàng")
-                    return false
-                }
+    <script>
+        var list = document.getElementsByClassName("themvaogio")
+        for (let index = 0; index < list.length; index++) {
+            list[index].onclick = function () {
+                alert("Bạn đã thêm thành công một sản phẩm vào giỏ hàng")
+                return false
             }
-        </script>
+        }
+    </script>
 </body>
 
 </html>
