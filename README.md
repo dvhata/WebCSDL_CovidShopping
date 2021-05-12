@@ -24,6 +24,7 @@ Backend: Python Django
 
 # Mô hình ER:
 
-![image](https://user-images.githubusercontent.com/71579658/116973352-965c0280-ace6-11eb-9c8c-ba6552925ccb.png)
+![image](https://user-images.githubusercontent.com/73162132/117947699-a903b680-b33a-11eb-8c88-b824dec4ccd3.png)
+
 
 
