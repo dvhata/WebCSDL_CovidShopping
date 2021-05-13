@@ -1,10 +1,8 @@
- # GIỚI THIỆU SẢN PHẨM
+ # GIỚI THIỆU SẢN PHẨM - BESAFE
 
 
-*Tên: BESAFE
-
-
-*Mô tả: Là nơi mua sắm, trang bị những đồ dùng cần thiết để bảo vệ sức khỏe của bản thân và gia đình, nhất là trong tình trạng dịch covid hoành hành
+## Mô tả: 
+Là nơi mua sắm, trang bị những đồ dùng cần thiết để bảo vệ sức khỏe của bản thân và gia đình, nhất là trong tình trạng dịch covid hoành hành
 
 ## Chức năng:
 *Admin (django)
