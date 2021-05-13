@@ -6,7 +6,7 @@
 
 *Mô tả: Là nơi mua sắm, trang bị những đồ dùng cần thiết để bảo vệ sức khỏe của bản thân và gia đình, nhất là trong tình trạng dịch covid hoành hành
 
-# Chức năng:
+## Chức năng:
 *Admin (django)
 
 *Người dùng: 
@@ -17,12 +17,18 @@
 + Xem thông tin cá nhân
 + Xem lại lịch sử đặt hàng
 
-# Ngôn ngữ phát triển
+## Ngôn ngữ phát triển
 Frontend: HTML, CSS, JS
 
 Backend: Python Django
 
-# Mô hình ER:
+## Nhóm phá triển:
+1. Đồng Vũ Hạnh Thảo
+2. Nguyễn Như Hoa
+3. Nguyễn Thanh Huyền
+
+
+## Mô hình ER:
 
 ![WED_BESAFR](https://user-images.githubusercontent.com/73162132/117947916-d7819180-b33a-11eb-8b24-4b0086c7743b.png)
 
