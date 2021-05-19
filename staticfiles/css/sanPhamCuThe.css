@@ -1,0 +1,208 @@
+body {
+	margin-top: 20px;
+}
+
+.content-item {
+	padding: 30px 0;
+	background-color: #FFFFFF;
+}
+
+.content-item.grey {
+	background-color: #F0F0F0;
+	padding: 50px 0;
+	height: 100%;
+}
+
+.content-item h2 {
+	font-weight: 700;
+	font-size: 35px;
+	line-height: 45px;
+	text-transform: uppercase;
+	margin: 20px 0;
+}
+
+.content-item h3 {
+	font-weight: 400;
+	font-size: 20px;
+	color: #555555;
+	margin: 10px 0 15px;
+	padding: 0;
+}
+
+.content-headline {
+	height: 1px;
+	text-align: center;
+	margin: 20px 0 70px;
+}
+
+.content-headline h2 {
+	background-color: #FFFFFF;
+	display: inline-block;
+	margin: -20px auto 0;
+	padding: 0 20px;
+}
+
+.grey .content-headline h2 {
+	background-color: #F0F0F0;
+}
+
+.content-headline h3 {
+	font-size: 14px;
+	color: #AAAAAA;
+	display: block;
+}
+
+
+#comments {
+	box-shadow: 0 -1px 6px 1px rgba(0, 0, 0, 0.1);
+	background-color: #FFFFFF;
+}
+
+#comments form {
+	margin-bottom: 30px;
+}
+
+#comments .btn {
+	margin-top: 7px;
+}
+
+#comments form fieldset {
+	clear: both;
+}
+
+#comments form textarea {
+	height: 100px;
+}
+
+#comments .media {
+	border-top: 1px dashed #DDDDDD;
+	padding: 20px 0;
+	margin: 0;
+}
+
+#comments .media>.pull-left {
+	margin-right: 20px;
+}
+
+#comments .media img {
+	max-width: 100px;
+}
+
+#comments .media h4 {
+	margin: 0 0 10px;
+}
+
+#comments .media h4 span {
+	font-size: 14px;
+	float: right;
+	color: #999999;
+}
+
+#comments .media p {
+	margin-bottom: 15px;
+	text-align: justify;
+}
+
+#comments .media-detail {
+	margin: 0;
+}
+
+#comments .media-detail li {
+	color: #AAAAAA;
+	font-size: 12px;
+	padding-right: 10px;
+	font-weight: 600;
+}
+
+#comments .media-detail a:hover {
+	text-decoration: underline;
+}
+
+#comments .media-detail li:last-child {
+	padding-right: 0;
+}
+
+#comments .media-detail li i {
+	color: #666666;
+	font-size: 15px;
+	margin-right: 10px;
+}
+
+.custom-select {
+	position: relative;
+	font-family: Arial;
+}
+
+.custom-select select {
+	display: none;
+	/*hide original SELECT element:*/
+}
+
+.select-selected {
+	background-color: red;
+	width: 130px;
+	height: 20px;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 14px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+	color: #ffffff;
+	padding: 8px 16px;
+	border: 1px solid transparent;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+	cursor: pointer;
+	user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+	position: absolute;
+	background-color: DodgerBlue;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+	display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+input[type=text] {
+	width: 900px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-image: url('searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+}
