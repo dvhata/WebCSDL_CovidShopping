@@ -150,7 +150,7 @@ def giohangview(request):
         don = Don_dat_hang(khach_hang=kh,san_pham=sp,so_luong=1,ngay_dat=timezone.now()
         ,ngay_giao=timezone.now(),tinh_trang='đã đặt',hinh_thuc_thanh_toan='thanh toán khi nhận hàng')
         don.save()
-    return render(request, 'giohang.html', context=context)
+    return render(request, 'giohang', context=context)
 
 def userview(request):
     userId = User.objects.get(username=request.user)
