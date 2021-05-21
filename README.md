@@ -25,6 +25,9 @@ Backend: Python Django
 2. Nguyễn Như Hoa
 3. Nguyễn Thanh Huyền
 
+## Demo website:
+https://besafe-covidshopp.herokuapp.com/
+
 
 ## Mô hình ER:
 
